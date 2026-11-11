@@ -48,8 +48,8 @@ concepts:
     - openapi/_original/tidio-openapi-openapi.yml#DELETE /contacts/{contactId}
     - openapi/_original/tidio-openapi-openapi.yml#GET /contacts
     - openapi/_original/tidio-openapi-openapi.yml#GET /contacts/{contactId}
+    - openapi/_original/tidio-openapi-openapi.yml#PATCH /contacts/batch
     - openapi/_original/tidio-openapi-openapi.yml#PATCH /contacts/{contactId}
-    - openapi/_original/tidio-openapi-openapi.yml#POST /contacts
   agent:
     path_segment:
     - operators

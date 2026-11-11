@@ -419,8 +419,8 @@ concepts:
       - author
       - user_id
       - sender_id
-      - authorId
       - agentId
+      - authorId
       - author_id
       - createdBy
     - name: created_at
@@ -487,6 +487,7 @@ concepts:
     - conversation
     - description
     - direction
+    - error
     - inbox_id
     - mentions
     - message_id
@@ -514,7 +515,6 @@ concepts:
     - commented_time
     - commenter
     - commenter_id
-    - content_attributes
   requester:
     segments_seen:
       contacts: 13
@@ -552,8 +552,8 @@ concepts:
       share: 0.125
       tier: long-tail
     - operation: UPDATE collection
-      providers: 2
-      share: 0.083
+      providers: 3
+      share: 0.125
       tier: long-tail
     properties:
     - name: id
@@ -959,7 +959,7 @@ concepts:
       type: string
       spellings:
       - description
-    long_tail_count: 226
+    long_tail_count: 229
     long_tail_sample:
     - member_count
     - updated_at

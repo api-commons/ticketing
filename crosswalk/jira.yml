@@ -24,8 +24,8 @@ concepts:
     - openapi/_original/jira-service-management-openapi.json#POST /rest/servicedeskapi/servicedesk/{serviceDeskId}/customer
   group:
     path_segment:
-    - queue
     - group
+    - queue
     - team
     - groups
     properties:
@@ -39,8 +39,8 @@ concepts:
     - openapi/_original/jira-platform-openapi.json#DELETE /rest/api/3/group
     - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/bulk/queue/{taskId}
     - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/group
+    - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/group/bulk
     - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/plans/plan/{planId}/team
-    - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/user/groups
   organization:
     path_segment:
     - organization

@@ -1,5 +1,6 @@
 {
  "cohort_size": 77,
+ "unreadable": [],
  "concepts": {
   "ticket": {
    "ada": {
@@ -2482,9 +2483,11 @@
      "openapi/_original/asapp-conversations-openapi.yml#GET /conversation/v1/conversations/{conversationId}/messages",
      "openapi/_original/asapp-conversations-openapi.yml#GET /conversation/v1/conversations/{conversationId}/messages/{messageId}",
      "openapi/_original/asapp-conversations-openapi.yml#POST /conversation/v1/conversations/{conversationId}/messages",
+     "openapi/_original/asapp-conversations-openapi.yml#POST /conversation/v1/conversations/{conversationId}/messages/batch",
      "openapi/_original/asapp-openapi-openapi.yml#GET /conversation/v1/conversations/{conversationId}/messages",
      "openapi/_original/asapp-openapi-openapi.yml#GET /conversation/v1/conversations/{conversationId}/messages/{messageId}",
-     "openapi/_original/asapp-openapi-openapi.yml#POST /conversation/v1/conversations/{conversationId}/messages"
+     "openapi/_original/asapp-openapi-openapi.yml#POST /conversation/v1/conversations/{conversationId}/messages",
+     "openapi/_original/asapp-openapi-openapi.yml#POST /conversation/v1/conversations/{conversationId}/messages/batch"
     ]
    },
    "atomicwork": {
@@ -2609,12 +2612,13 @@
      "POST collection"
     ],
     "properties": {
-     "id": "string",
-     "authorId": "string",
-     "createdAt": "string",
-     "csid": "integer",
+     "error": "object",
      "message": "string",
      "agentId": "string",
+     "createdAt": "string",
+     "id": "string",
+     "authorId": "string",
+     "csid": "integer",
      "externalId": "string",
      "attributes": null,
      "content": null,
@@ -2627,7 +2631,8 @@
      "openapi/_original/dixa-api.yaml#GET /beta/conversations/{conversationId}/messages",
      "openapi/_original/dixa-api.yaml#GET /beta/conversations/{conversationId}/notes",
      "openapi/_original/dixa-api.yaml#POST /beta/conversations/{conversationId}/messages",
-     "openapi/_original/dixa-api.yaml#POST /beta/conversations/{conversationId}/notes"
+     "openapi/_original/dixa-api.yaml#POST /beta/conversations/{conversationId}/notes",
+     "openapi/_original/dixa-api.yaml#POST /beta/conversations/{conversationId}/notes/bulk"
     ]
    },
    "entergram": {
@@ -3480,6 +3485,7 @@
      "openapi/_original/dixa-api.yaml#PATCH /beta/endusers",
      "openapi/_original/dixa-api.yaml#PATCH /beta/endusers/{userId}",
      "openapi/_original/dixa-api.yaml#POST /beta/endusers",
+     "openapi/_original/dixa-api.yaml#POST /beta/endusers/bulk",
      "openapi/_original/dixa-api.yaml#PUT /beta/endusers",
      "openapi/_original/dixa-api.yaml#PUT /beta/endusers/{userId}"
     ]
@@ -4307,6 +4313,7 @@
      "DELETE item",
      "GET collection",
      "GET item",
+     "PATCH collection",
      "PATCH item",
      "POST collection"
     ],
@@ -4328,8 +4335,10 @@
      "openapi/_original/tidio-openapi-openapi.yml#DELETE /contacts/{contactId}",
      "openapi/_original/tidio-openapi-openapi.yml#GET /contacts",
      "openapi/_original/tidio-openapi-openapi.yml#GET /contacts/{contactId}",
+     "openapi/_original/tidio-openapi-openapi.yml#PATCH /contacts/batch",
      "openapi/_original/tidio-openapi-openapi.yml#PATCH /contacts/{contactId}",
-     "openapi/_original/tidio-openapi-openapi.yml#POST /contacts"
+     "openapi/_original/tidio-openapi-openapi.yml#POST /contacts",
+     "openapi/_original/tidio-openapi-openapi.yml#POST /contacts/batch"
     ]
    },
    "trengo": {
@@ -4606,6 +4615,7 @@
      "openapi/_original/dixa-api.yaml#PATCH /beta/agents/{agentId}",
      "openapi/_original/dixa-api.yaml#PATCH /beta/teams/{teamId}/agents",
      "openapi/_original/dixa-api.yaml#POST /beta/agents",
+     "openapi/_original/dixa-api.yaml#POST /beta/agents/bulk",
      "openapi/_original/dixa-api.yaml#PUT /beta/agents",
      "openapi/_original/dixa-api.yaml#PUT /beta/agents/{agentId}"
     ]
@@ -5586,8 +5596,8 @@
    },
    "jira": {
     "segments": [
-     "queue",
      "group",
+     "queue",
      "team",
      "groups"
     ],
@@ -5614,12 +5624,16 @@
      "name": "string",
      "self": "string",
      "users": null,
+     "isLast": "boolean",
+     "maxResults": "integer",
+     "nextPage": "string",
+     "startAt": "integer",
+     "total": "integer",
+     "values": "array",
      "cursor": "string",
      "last": "boolean",
      "nextPageCursor": "string",
      "size": "integer",
-     "total": "integer",
-     "values": "array",
      "_expands": "array",
      "_links": null,
      "isLastPage": "boolean",
@@ -5634,6 +5648,7 @@
      "openapi/_original/jira-platform-openapi.json#DELETE /rest/api/3/group",
      "openapi/_original/jira-platform-openapi.json#GET /rest/api/3/bulk/queue/{taskId}",
      "openapi/_original/jira-platform-openapi.json#GET /rest/api/3/group",
+     "openapi/_original/jira-platform-openapi.json#GET /rest/api/3/group/bulk",
      "openapi/_original/jira-platform-openapi.json#GET /rest/api/3/plans/plan/{planId}/team",
      "openapi/_original/jira-platform-openapi.json#GET /rest/api/3/user/groups",
      "openapi/_original/jira-platform-openapi.json#POST /rest/api/3/group",

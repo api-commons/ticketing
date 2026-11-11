@@ -62,8 +62,8 @@
         "author",
         "user_id",
         "sender_id",
-        "authorId",
         "agentId",
+        "authorId",
         "author_id",
         "createdBy"
       ]

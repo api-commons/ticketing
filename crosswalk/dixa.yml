@@ -29,8 +29,8 @@ concepts:
       body: content
       attachments: attachments
       author_id:
-      - authorId
       - agentId
+      - authorId
       created_at: createdAt
       external_id: externalId
     core_coverage: 0.833
@@ -39,6 +39,7 @@ concepts:
     - openapi/_original/dixa-api.yaml#GET /beta/conversations/{conversationId}/notes
     - openapi/_original/dixa-api.yaml#POST /beta/conversations/{conversationId}/messages
     - openapi/_original/dixa-api.yaml#POST /beta/conversations/{conversationId}/notes
+    - openapi/_original/dixa-api.yaml#POST /beta/conversations/{conversationId}/notes/bulk
   requester:
     path_segment:
     - endusers
