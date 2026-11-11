@@ -4172,6 +4172,32 @@
      "openapi/_original/pylon-openapi.yml#POST /contacts"
     ]
    },
+   "salesforce": {
+    "segments": [
+     "contacts"
+    ],
+    "operations": [
+     "DELETE collection",
+     "GET collection",
+     "GET item"
+    ],
+    "properties": {
+     "contactKey": "string",
+     "contactId": "integer",
+     "contactStatus": "string",
+     "isAnonymous": "boolean",
+     "attributeSets": "array",
+     "requestServiceMessageID": "string",
+     "resultMessages": "array",
+     "contactKeys": "array",
+     "deleteOperationType": "string"
+    },
+    "evidence": [
+     "openapi/_original/salesforce-marketing-cloud-rest-openapi.yml#DELETE /contacts/v1/contacts",
+     "openapi/_original/salesforce-marketing-cloud-rest-openapi.yml#GET /contacts/v1/contacts",
+     "openapi/_original/salesforce-marketing-cloud-rest-openapi.yml#GET /contacts/v1/contacts/{contactKey}"
+    ]
+   },
    "salesforce-service-cloud": {
     "segments": [
      "contact"
