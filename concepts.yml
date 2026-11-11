@@ -129,3 +129,11 @@ exclude:
 # One company, several catalog listings: merged under the first slug.
 duplicates:
   khoros-ai: [lithium]
+
+workflows:
+  - id: open-ticket-and-reply
+    summary: Open a ticket for a requester and post the first reply
+    steps:
+      - {op: createRequester, id: requester}
+      - {op: createTicket, id: ticket, link: {requester_id: "$steps.requester.outputs.id"}}
+      - {op: createTicketMessage, id: reply, path: {"{ticket_id}": "$steps.ticket.outputs.id"}}

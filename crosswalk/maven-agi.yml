@@ -1,7 +1,7 @@
 provider: maven-agi
 apis_io: https://apis.io/providers/maven-agi/
 context: ticketing
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   agent:
     path_segment:

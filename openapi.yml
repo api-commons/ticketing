@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Help Desk and Ticketing (API Commons)
-  version: 0.1.0-draft.20261110
+  version: 0.1.0-draft.20261111
   description: 'The common Help Desk and Ticketing interface, distilled from the harvested OpenAPI of 77 providers
     in the APIs.io catalog. Not a product: no one serves this API. It is the shape the market already shares, measured,
     so that providers, agents and integrators can map to one vocabulary. See profile.yml.'
@@ -123,7 +123,7 @@ paths:
           application/json:
             schema: *id002
     get:
-      operationId: listTicketMessages
+      operationId: listMessages
       summary: List messages
       tags:
       - Ticket Messages

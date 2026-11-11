@@ -1,0 +1,48 @@
+arazzo: 1.0.1
+info:
+  title: Help Desk and Ticketing workflows (API Commons)
+  version: 0.1.0-draft.20261111
+  summary: Reference workflows over the common Help Desk and Ticketing operations.
+  description: 'Reference compositions of the operations this context''s providers share. Not measured: every step
+    is a core- or extended-tier operation of the common OpenAPI, so the workflow runs against any provider that
+    implements those operations (see crosswalk/).'
+sourceDescriptions:
+- name: ticketing
+  url: ./openapi.yml
+  type: openapi
+workflows:
+- workflowId: open-ticket-and-reply
+  summary: Open a ticket for a requester and post the first reply
+  description: Open a ticket for a requester and post the first reply.
+  steps:
+  - stepId: requester
+    operationId: createRequester
+    description: Create a requester -- a core-tier operation (96% of providers).
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      id: $response.body#/id
+  - stepId: ticket
+    operationId: createTicket
+    description: Create a ticket -- a core-tier operation (88% of providers).
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      id: $response.body#/id
+    requestBody:
+      contentType: application/json
+      payload:
+        requester_id: $steps.requester.outputs.id
+  - stepId: reply
+    operationId: createTicketMessage
+    description: Create a ticket message -- a core-tier operation (89% of providers).
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      id: $response.body#/id
+    parameters:
+    - name: ticket_id
+      in: path
+      value: $steps.ticket.outputs.id
+  x-commons-tiers:
+  - core

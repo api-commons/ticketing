@@ -22,7 +22,7 @@ a count of providers.
 | group | 27 | 22 | id 91%, name 91% | teams 17, groups 14, queues 4, team 3 |
 | organization | 14 | 14 | id 100%, name 79%, created_at 71% | accounts 5, organizations 5, companies 4, organization 4 |
 
-Cohort: 77 providers with harvested OpenAPI, 48 crosswalks. Of the providers exposing a ticket: 88% create, 82% list, 85% fetch, 71% update, 50% delete. Generated 2026-11-10 by build.py.
+Cohort: 77 providers with harvested OpenAPI, 48 crosswalks. Of the providers exposing a ticket: 88% create, 82% list, 85% fetch, 71% update, 50% delete. Generated 2026-11-11 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The
