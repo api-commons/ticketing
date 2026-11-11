@@ -1,0 +1,123 @@
+provider: kaseya
+apis_io: https://apis.io/providers/kaseya/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      status:
+      - status
+      - StatusId
+      id: id
+      subject:
+      - title
+      - Title
+      assignee_id: AssigneeId
+      priority:
+      - priority
+      - PriorityId
+      channel: source
+      requester_id:
+      - contactID
+      - ContactId
+      description:
+      - description
+      - Details
+      type:
+      - ticketType
+      - TypeId
+      group_id:
+      - queueID
+      - QueueId
+      organization_id:
+      - companyID
+      - AccountId
+      external_id:
+      - externalID
+      - SourceId
+      cc_ids: Ccs
+    core_coverage: 0.778
+    evidence:
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#DELETE /V1.0/ServiceCalls/{parentId}/Tickets/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/ServiceCalls/{parentId}/Tickets
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/ServiceCalls/{parentId}/Tickets/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Tickets/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#PATCH /V1.0/Tickets
+  ticket_message:
+    path_segment:
+    - notes
+    properties:
+      id:
+      - id
+      - Id
+      attachments:
+      - Attachments
+      - AttachmentIds
+      ticket_id: ticketID
+      name: title
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Tickets/{parentId}/Notes
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Tickets/{parentId}/Notes/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#PATCH /V1.0/Tickets/{parentId}/Notes
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#POST /V1.0/Tickets/{parentId}/Notes
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#PUT /V1.0/Tickets/{parentId}/Notes
+  requester:
+    path_segment:
+    - contacts
+    properties:
+      id: id
+      name: title
+      email: emailAddress
+      phone: phone
+      external_id: externalID
+      organization_id:
+      - companyID
+      - AccountId
+      last_name:
+      - lastName
+      - LastName
+      first_name:
+      - firstName
+      - FirstName
+      city: city
+      middle_name: MiddleName
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#DELETE /V1.0/Companies/{parentId}/Contacts/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#DELETE /V1.0/ContactGroups/{parentId}/Contacts/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Companies/{parentId}/Contacts
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Companies/{parentId}/Contacts/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/ContactGroups/{parentId}/Contacts
+  group:
+    path_segment:
+    - teams
+    - departments
+    properties:
+      name: name
+      id: id
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#DELETE /V1.0/Companies/{parentId}/Teams/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Companies/{parentId}/Teams
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Companies/{parentId}/Teams/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Departments/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#PATCH /V1.0/Departments
+  organization:
+    path_segment:
+    - companies
+    - accounts
+    properties:
+      id: id
+      notes: Description
+      phone: phone
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Companies/{id}
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#PATCH /V1.0/Companies
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#POST /V1.0/Companies
+    - openapi/_original/kaseya-autotask-psa-openapi-original.json#PUT /V1.0/Companies
+    - openapi/_original/kaseya-bms-openapi-original.json#PATCH /v2/crm/accounts/{id}

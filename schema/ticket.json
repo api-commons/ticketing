@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/ticketing/main/schema/ticket.json",
+  "title": "Ticket",
+  "description": "The common ticket in Help Desk and Ticketing, distilled from 25 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.92,
+      "x-commons-providers": 23,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "status_id",
+        "StatusId",
+        "Status"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.88,
+      "x-commons-providers": 22,
+      "x-commons-spellings": [
+        "id",
+        "uuid",
+        "displayId",
+        "Id"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.76,
+      "x-commons-providers": 19,
+      "x-commons-spellings": [
+        "subject",
+        "title",
+        "name",
+        "summary",
+        "Title",
+        "Subject",
+        "raw_subject"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.72,
+      "x-commons-providers": 18,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "dateCreated",
+        "createdDate",
+        "created",
+        "CreatedDate",
+        "createdTime"
+      ],
+      "format": "date-time"
+    },
+    "assignee_id": {
+      "type": "object",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.64,
+      "x-commons-providers": 16,
+      "x-commons-spellings": [
+        "assignee",
+        "assignee_id",
+        "assignedTo",
+        "assignedToId",
+        "responder_id",
+        "ownerId",
+        "agentId",
+        "AssigneeId"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.6,
+      "x-commons-providers": 15,
+      "x-commons-spellings": [
+        "priority",
+        "PriorityId",
+        "Priority"
+      ]
+    },
+    "channel": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.56,
+      "x-commons-providers": 14,
+      "x-commons-spellings": [
+        "channel",
+        "source",
+        "via",
+        "Origin"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.56,
+      "x-commons-providers": 14,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "dateModified",
+        "updated"
+      ],
+      "format": "date-time"
+    },
+    "requester_id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.52,
+      "x-commons-providers": 13,
+      "x-commons-spellings": [
+        "requester",
+        "contact_id",
+        "requester_id",
+        "ContactId",
+        "requesterId",
+        "userId",
+        "user_id",
+        "customerId"
+      ]
+    },
+    "custom_fields": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.44,
+      "x-commons-providers": 11,
+      "x-commons-spellings": [
+        "custom_fields",
+        "customFields",
+        "properties",
+        "attributes",
+        "custom_properties",
+        "fields"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.44,
+      "x-commons-providers": 11,
+      "x-commons-spellings": [
+        "tags",
+        "tag_ids",
+        "labels"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.4,
+      "x-commons-providers": 10,
+      "x-commons-spellings": [
+        "description",
+        "body",
+        "Details",
+        "Description"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.4,
+      "x-commons-providers": 10,
+      "x-commons-spellings": [
+        "type",
+        "ticket_type",
+        "ticketType",
+        "TypeId",
+        "Type",
+        "category"
+      ]
+    },
+    "group_id": {
+      "type": "integer",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.36,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "inbox_id",
+        "team_id",
+        "group_id",
+        "queueId",
+        "inboxId",
+        "queueID",
+        "QueueId",
+        "departmentId"
+      ]
+    },
+    "organization_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.36,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "account_id",
+        "AccountId",
+        "company_id",
+        "organizationId",
+        "companyID",
+        "organization_id",
+        "accountId"
+      ]
+    },
+    "external_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.24,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "external_id",
+        "source_id",
+        "externalID",
+        "SourceId",
+        "externalId"
+      ]
+    },
+    "cc_ids": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.2,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "cc_emails",
+        "watchers",
+        "Ccs",
+        "collaborator_ids",
+        "follower_ids"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "ticketing",
+    "concept": "ticket",
+    "providers": 25,
+    "generated": "2026-11-10"
+  }
+}

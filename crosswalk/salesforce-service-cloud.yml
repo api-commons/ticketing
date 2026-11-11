@@ -1,0 +1,43 @@
+provider: salesforce-service-cloud
+apis_io: https://apis.io/providers/salesforce-service-cloud/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - case
+    properties:
+      status: Status
+      id:
+      - id
+      - Id
+      subject: Subject
+      created_at: CreatedDate
+      assignee_id: OwnerId
+      priority: Priority
+      channel: Origin
+      requester_id: ContactId
+      description: Description
+      type: Type
+      organization_id: AccountId
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/salesforce-service-cloud-rest-openapi.yml#DELETE /sobjects/Case/{caseId}
+    - openapi/_original/salesforce-service-cloud-rest-openapi.yml#GET /sobjects/Case
+    - openapi/_original/salesforce-service-cloud-rest-openapi.yml#GET /sobjects/Case/{caseId}
+    - openapi/_original/salesforce-service-cloud-rest-openapi.yml#PATCH /sobjects/Case/{caseId}
+    - openapi/_original/salesforce-service-cloud-rest-openapi.yml#POST /sobjects/Case
+  requester:
+    path_segment:
+    - contact
+    properties:
+      id: id
+      email: Email
+      phone: Phone
+      organization_id: AccountId
+      last_name: LastName
+      first_name: FirstName
+    core_coverage: 0.6
+    evidence:
+    - openapi/_original/salesforce-service-cloud-rest-openapi.yml#GET /sobjects/Contact
+    - openapi/_original/salesforce-service-cloud-rest-openapi.yml#POST /sobjects/Contact

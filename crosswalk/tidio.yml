@@ -1,0 +1,64 @@
+provider: tidio
+apis_io: https://apis.io/providers/tidio/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      status: status
+      id: id
+      subject: subject
+      created_at: created_at
+      priority: priority
+      requester_id: contact_id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/tidio-openapi-openapi.yml#DELETE /tickets/{ticketId}
+    - openapi/_original/tidio-openapi-openapi.yml#GET /tickets
+    - openapi/_original/tidio-openapi-openapi.yml#GET /tickets/{ticketId}
+    - openapi/_original/tidio-openapi-openapi.yml#PATCH /tickets/{ticketId}
+    - openapi/_original/tidio-openapi-openapi.yml#POST /lyro/tickets
+  ticket_message:
+    path_segment:
+    - reply
+    properties:
+      id: id
+      body: content
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/tidio-openapi-openapi.yml#POST /tickets/{ticketId}/reply
+  requester:
+    path_segment:
+    - contacts
+    properties:
+      id: id
+      email: email
+      phone: phone
+      created_at: created_at
+      custom_fields: properties
+      last_name: last_name
+      first_name: first_name
+      city: city
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/tidio-openapi-openapi.yml#DELETE /contacts/{contactId}
+    - openapi/_original/tidio-openapi-openapi.yml#GET /contacts
+    - openapi/_original/tidio-openapi-openapi.yml#GET /contacts/{contactId}
+    - openapi/_original/tidio-openapi-openapi.yml#PATCH /contacts/{contactId}
+    - openapi/_original/tidio-openapi-openapi.yml#POST /contacts
+  agent:
+    path_segment:
+    - operators
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tidio-openapi-openapi.yml#GET /operators
+  group:
+    path_segment:
+    - departments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tidio-openapi-openapi.yml#GET /departments

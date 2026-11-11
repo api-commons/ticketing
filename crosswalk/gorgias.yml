@@ -1,0 +1,63 @@
+provider: gorgias
+apis_io: https://apis.io/providers/gorgias/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      status: status
+      id: id
+      subject: subject
+      priority: priority
+      channel:
+      - channel
+      - via
+      tags: tags
+      external_id: external_id
+    core_coverage: 0.556
+    evidence:
+    - openapi/_original/gorgias-openapi.yml#DELETE /api/tickets/{id}
+    - openapi/_original/gorgias-openapi.yml#GET /api/tickets
+    - openapi/_original/gorgias-openapi.yml#GET /api/tickets/{id}
+    - openapi/_original/gorgias-openapi.yml#POST /api/tickets
+    - openapi/_original/gorgias-openapi.yml#PUT /api/tickets/{id}
+  ticket_message:
+    path_segment:
+    - messages
+    properties:
+      id: id
+      body: body_text
+      attachments: attachments
+      ticket_id: ticket_id
+      is_public: public
+      external_id: external_id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/gorgias-openapi.yml#GET /api/tickets/{id}/messages
+    - openapi/_original/gorgias-openapi.yml#POST /api/tickets/{id}/messages
+  requester:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      external_id: external_id
+      time_zone: timezone
+    core_coverage: 0.6
+    evidence:
+    - openapi/_original/gorgias-openapi.yml#DELETE /api/customers/{id}
+    - openapi/_original/gorgias-openapi.yml#GET /api/customers
+    - openapi/_original/gorgias-openapi.yml#GET /api/customers/{id}
+    - openapi/_original/gorgias-openapi.yml#POST /api/customers
+    - openapi/_original/gorgias-openapi.yml#PUT /api/customers/{id}
+  group:
+    path_segment:
+    - teams
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/gorgias-openapi.yml#GET /api/teams
+    - openapi/_original/gorgias-openapi.yml#POST /api/teams

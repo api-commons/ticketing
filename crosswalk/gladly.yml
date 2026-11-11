@@ -1,0 +1,67 @@
+provider: gladly
+apis_io: https://apis.io/providers/gladly/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - conversations
+    properties:
+      status: status
+      id: id
+      created_at: createdAt
+      assignee_id:
+      - agentId
+      - assignee
+      requester_id: customerId
+      group_id: inboxId
+    core_coverage: 0.556
+    evidence:
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/conversations/{conversationId}
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/customers/{customerId}/conversations
+    - openapi/_original/gladly-rest-api-openapi.yml#PATCH /api/v1/conversations/{conversationId}
+  ticket_message:
+    path_segment:
+    - notes
+    properties:
+      id: id
+      body:
+      - body
+      - content
+      ticket_id: conversationId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/conversations/{conversationId}/notes/{noteId}
+    - openapi/_original/gladly-rest-api-openapi.yml#POST /api/v1/conversations/{conversationId}/notes
+  agent:
+    path_segment:
+    - agents
+    properties:
+      id: id
+      name: name
+      email: emailAddress
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/agents
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/agents/{agentId}
+  group:
+    path_segment:
+    - teams
+    properties:
+      name: name
+      id: id
+      agent_ids: agentIds
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/teams
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/teams/{teamId}
+  organization:
+    path_segment:
+    - organization
+    properties:
+      id: id
+      name: name
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/gladly-rest-api-openapi.yml#GET /api/v1/organization

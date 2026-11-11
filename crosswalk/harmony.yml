@@ -1,0 +1,28 @@
+provider: harmony
+apis_io: https://apis.io/providers/harmony/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      status: status
+      id: id
+      subject: title
+      created_at: created_at
+      assignee_id: assignee
+      priority: priority
+      channel: source
+      updated_at: updated_at
+      custom_fields: custom_fields
+      tags: tags
+      description: description
+      type: ticket_type
+      cc_ids: watchers
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/harmony-service-desk-openapi.json#GET /api/v1/tickets/
+    - openapi/_original/harmony-service-desk-openapi.json#GET /api/v1/tickets/{ticket_id}
+    - openapi/_original/harmony-service-desk-openapi.json#PATCH /api/v1/tickets/{ticket_id}
+    - openapi/_original/harmony-service-desk-openapi.json#POST /api/v1/tickets/

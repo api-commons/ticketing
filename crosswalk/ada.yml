@@ -1,0 +1,18 @@
+provider: ada
+apis_io: https://apis.io/providers/ada/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  requester:
+    path_segment:
+    - end-users
+    properties:
+      created_at: created_at
+      external_id: external_id
+      updated_at: updated_at
+    core_coverage: 0.2
+    evidence:
+    - openapi/_original/ada-knowledge-openapi.yml#GET /v2/end-users/
+    - openapi/_original/ada-knowledge-openapi.yml#GET /v2/end-users/{end_user_id}
+    - openapi/_original/ada-knowledge-openapi.yml#PATCH /v2/end-users/{end_user_id}
+    - openapi/_original/ada-knowledge-openapi.yml#POST /v2/end-users/

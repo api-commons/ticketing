@@ -1,0 +1,27 @@
+provider: servicenow
+apis_io: https://apis.io/providers/servicenow/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  requester:
+    path_segment:
+    - contact
+    properties:
+      name:
+      - name
+      - title
+      email: email
+      phone: phone
+      created_at: sys_created_on
+      organization_id: company
+      last_name: last_name
+      updated_at: sys_updated_on
+      first_name: first_name
+      city: city
+      middle_name: middle_name
+      time_zone: time_zone
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/contact-api-openapi.yaml#GET /contact
+    - openapi/_original/contact-api-openapi.yaml#GET /contact/{id}
+    - openapi/_original/contact-api-openapi.yaml#POST /contact

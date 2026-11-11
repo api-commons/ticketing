@@ -1,0 +1,15 @@
+provider: pypestream
+apis_io: https://apis.io/providers/pypestream/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  organization:
+    path_segment:
+    - organization
+    properties:
+      id: id
+      name: name
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/pypestream-analytics-api-openapi.json#GET /api/organization/
+    - openapi/_original/pypestream-analytics-api-openapi.json#GET /api/organization/{id}/

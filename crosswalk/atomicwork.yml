@@ -1,0 +1,41 @@
+provider: atomicwork
+apis_io: https://apis.io/providers/atomicwork/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - requests
+    properties:
+      status: status
+      subject: subject
+      created_at: created_at
+      assignee_id: assignee
+      priority: priority
+      updated_at: updated_at
+      requester_id: requester
+      custom_fields: custom_fields
+      tags: tags
+      description: description
+      external_id: external_id
+      cc_ids: cc_emails
+    core_coverage: 0.778
+    evidence:
+    - openapi/_original/atomicwork-public-api-openapi.yaml#GET /api/v1/forms/requests
+    - openapi/_original/atomicwork-public-api-openapi.yaml#GET /api/v1/requests/{requestId}
+    - openapi/_original/atomicwork-public-api-openapi.yaml#PATCH /api/v1/requests/{requestId}
+    - openapi/_original/atomicwork-public-api-openapi.yaml#POST /api/v1/requests
+  ticket_message:
+    path_segment:
+    - notes
+    properties:
+      attachments: attachments
+      ticket_id: conversation_id
+      author_id: user_id
+      is_public: is_private
+      type: type
+      external_id: external_id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/atomicwork-public-api-openapi.yaml#GET /api/v1/requests/{requestId}/notes
+    - openapi/_original/atomicwork-public-api-openapi.yaml#POST /api/v1/requests/{requestId}/notes

@@ -1,0 +1,12 @@
+provider: atlassian-jira
+apis_io: https://apis.io/providers/atlassian-jira/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - issues
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/atlassian-jira-openapi.yml#POST /rest/api/3/issues

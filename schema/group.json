@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/ticketing/main/schema/group.json",
+  "title": "Group",
+  "description": "The common group in Help Desk and Ticketing, distilled from 22 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.909,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "name",
+        "displayName"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.864,
+      "x-commons-providers": 19,
+      "x-commons-spellings": [
+        "id"
+      ]
+    },
+    "agent_ids": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.409,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "members",
+        "agentIds",
+        "agent_ids",
+        "userIds",
+        "user_ids",
+        "agents"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.318,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "created_at",
+        "dateCreated",
+        "createdDate",
+        "created",
+        "createdTime"
+      ],
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.318,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "description"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "ticketing",
+    "concept": "group",
+    "providers": 22,
+    "generated": "2026-11-10"
+  }
+}

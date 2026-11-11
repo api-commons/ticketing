@@ -1,0 +1,69 @@
+provider: hubspot
+apis_io: https://apis.io/providers/hubspot/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      id: id
+      created_at: createdAt
+      updated_at: updatedAt
+      custom_fields: properties
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/hubspot-crm-tickets-openapi.json#DELETE /crm/objects/2026-03/tickets/{ticketId}
+    - openapi/_original/hubspot-crm-tickets-openapi.json#GET /crm/objects/2026-03/tickets
+    - openapi/_original/hubspot-crm-tickets-openapi.json#GET /crm/objects/2026-03/tickets/{ticketId}
+    - openapi/_original/hubspot-crm-tickets-openapi.json#PATCH /crm/objects/2026-03/tickets/{ticketId}
+    - openapi/_original/hubspot-crm-tickets-openapi.json#POST /crm/objects/2026-03/tickets
+  ticket_message:
+    path_segment:
+    - threads
+    - messages
+    properties:
+      id: id
+      body: text
+      attachments: attachments
+      author_id: createdBy
+      created_at: createdAt
+      type: type
+      updated_at: updatedAt
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/hubspot-conversations-conversations-openapi.json#DELETE /conversations/v3/conversations/threads/{threadId}
+    - openapi/_original/hubspot-conversations-conversations-openapi.json#GET /conversations/v3/conversations/threads
+    - openapi/_original/hubspot-conversations-conversations-openapi.json#GET /conversations/v3/conversations/threads/{threadId}
+    - openapi/_original/hubspot-conversations-conversations-openapi.json#PATCH /conversations/v3/conversations/threads/{threadId}
+    - openapi/_original/hubspot-conversations-custom-channels-openapi.json#GET /conversations/custom-channels/2026-09/{channelId}/messages/{messageId}
+  group:
+    path_segment:
+    - groups
+    - teams
+    properties:
+      name: name
+      id: id
+      agent_ids: userIds
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/hubspot-cms-media-bridge-openapi.json#DELETE /media-bridge/2026-09/{appId}/properties/{objectType}/groups/{groupName}
+    - openapi/_original/hubspot-cms-media-bridge-openapi.json#GET /media-bridge/2026-09/{appId}/properties/{objectType}/groups
+    - openapi/_original/hubspot-cms-media-bridge-openapi.json#GET /media-bridge/2026-09/{appId}/properties/{objectType}/groups/{groupName}
+    - openapi/_original/hubspot-cms-media-bridge-openapi.json#PATCH /media-bridge/2026-09/{appId}/properties/{objectType}/groups/{groupName}
+    - openapi/_original/hubspot-cms-media-bridge-openapi.json#POST /media-bridge/2026-09/{appId}/properties/{objectType}/groups
+  organization:
+    path_segment:
+    - companies
+    properties:
+      id: id
+      created_at: createdAt
+      custom_fields: properties
+      updated_at: updatedAt
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/hubspot-crm-companies-openapi.json#DELETE /crm/objects/2026-03/companies/{companyId}
+    - openapi/_original/hubspot-crm-companies-openapi.json#GET /crm/objects/2026-03/companies
+    - openapi/_original/hubspot-crm-companies-openapi.json#GET /crm/objects/2026-03/companies/{companyId}
+    - openapi/_original/hubspot-crm-companies-openapi.json#PATCH /crm/objects/2026-03/companies/{companyId}
+    - openapi/_original/hubspot-crm-companies-openapi.json#POST /crm/objects/2026-03/companies

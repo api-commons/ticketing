@@ -1,0 +1,17 @@
+provider: maven-agi
+apis_io: https://apis.io/providers/maven-agi/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  agent:
+    path_segment:
+    - agents
+    properties:
+      name: name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/maven-agi-openapi.yml#DELETE /organizations/{organizationReferenceId}/agents/{agentReferenceId}
+    - openapi/_original/maven-agi-openapi.yml#GET /organizations/{organizationReferenceId}/agents
+    - openapi/_original/maven-agi-openapi.yml#GET /organizations/{organizationReferenceId}/agents/{agentReferenceId}
+    - openapi/_original/maven-agi-openapi.yml#PATCH /organizations/{organizationReferenceId}/agents/{agentReferenceId}
+    - openapi/_original/maven-agi-openapi.yml#POST /agents

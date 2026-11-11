@@ -1,0 +1,31 @@
+provider: kustomer
+apis_io: https://apis.io/providers/kustomer/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - conversations
+    properties:
+      status: status
+      id: id
+      subject: name
+      channel: channel
+      custom_fields: attributes
+      type: type
+    core_coverage: 0.444
+    evidence:
+    - openapi/_original/kustomer-openapi.yml#POST /v1/conversations
+  requester:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: emails
+      phone: phones
+      external_id: externalId
+      custom_fields: attributes
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/kustomer-openapi.yml#POST /v1/customers

@@ -1,0 +1,14 @@
+provider: moveworks
+apis_io: https://apis.io/providers/moveworks/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  group:
+    path_segment:
+    - groups
+    properties:
+      name: name
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/moveworks-content-gateway-openapi.yaml#GET /groups

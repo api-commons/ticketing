@@ -1,0 +1,33 @@
+provider: hiver
+apis_io: https://apis.io/providers/hiver/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - conversations
+    properties:
+      status: status
+      id: id
+      assignee_id: assignee
+      tags:
+      - tag_ids
+      - tags
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/hiver-api-openapi.json#GET /inboxes/{inbox_id}/conversations
+    - openapi/_original/hiver-api-openapi.json#GET /inboxes/{inbox_id}/conversations/{conversation_id}
+    - openapi/_original/hiver-api-openapi.json#PATCH /inboxes/{inbox_id}/conversations/{conversation_id}
+  ticket_message:
+    path_segment:
+    - notes
+    properties:
+      id: id
+      body: content
+      attachments: attachments
+      ticket_id: conversation_id
+      author_id: author
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/hiver-api-openapi.json#POST /inboxes/{inboxId}/conversations/{conversationId}/notes

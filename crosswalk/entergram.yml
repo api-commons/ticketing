@@ -1,0 +1,55 @@
+provider: entergram
+apis_io: https://apis.io/providers/entergram/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      status: status
+      id:
+      - displayId
+      - id
+      subject: title
+      created_at: createdAt
+      assignee_id:
+      - assignedTo
+      - assignedToId
+      priority: priority
+      updated_at: updatedAt
+      requester_id: userId
+      custom_fields: customFields
+      description: description
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/entergram-openapi.json#DELETE /v1/tickets/{ticket_id}
+    - openapi/_original/entergram-openapi.json#GET /v1/chats/{chat_id}/tickets
+    - openapi/_original/entergram-openapi.json#GET /v1/tickets
+    - openapi/_original/entergram-openapi.json#GET /v1/tickets/{ticket_id}
+    - openapi/_original/entergram-openapi.json#PATCH /v1/tickets/{ticket_id}
+  ticket_message:
+    path_segment:
+    - comments
+    properties:
+      id: id
+      body: body
+      ticket_id: ticketId
+      author_id: author
+      created_at: createdAt
+      updated_at: updatedAt
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/entergram-openapi.json#DELETE /v1/tickets/{ticket_id}/comments/{comment_id}
+    - openapi/_original/entergram-openapi.json#GET /v1/tickets/{ticket_id}/comments
+    - openapi/_original/entergram-openapi.json#PATCH /v1/tickets/{ticket_id}/comments/{comment_id}
+    - openapi/_original/entergram-openapi.json#POST /v1/tickets/{ticket_id}/comments
+  group:
+    path_segment:
+    - groups
+    properties:
+      name: displayName
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/entergram-openapi.json#GET /v1/groups
+    - openapi/_original/entergram-openapi.json#GET /v1/groups/{group_id}

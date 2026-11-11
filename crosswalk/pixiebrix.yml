@@ -1,0 +1,33 @@
+provider: pixiebrix
+apis_io: https://apis.io/providers/pixiebrix/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  group:
+    path_segment:
+    - groups
+    properties:
+      name: name
+      id: id
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/pixiebrix-openapi.yml#DELETE /api/deployments/{deployment_pk}/groups/{id}/
+    - openapi/_original/pixiebrix-openapi.yml#DELETE /api/groups/{id}/
+    - openapi/_original/pixiebrix-openapi.yml#GET /api/audit/groups/{id}/
+    - openapi/_original/pixiebrix-openapi.yml#GET /api/deployments/{deployment_pk}/groups/
+    - openapi/_original/pixiebrix-openapi.yml#GET /api/groups/{id}/
+  organization:
+    path_segment:
+    - organizations
+    properties:
+      id: id
+      name: name
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/pixiebrix-openapi.yml#DELETE /api/organizations/{organization_pk}/
+    - openapi/_original/pixiebrix-openapi.yml#GET /api/audit/organizations/{id}/
+    - openapi/_original/pixiebrix-openapi.yml#GET /api/organizations/
+    - openapi/_original/pixiebrix-openapi.yml#GET /api/organizations/{organization_pk}/
+    - openapi/_original/pixiebrix-openapi.yml#GET /api/support/organizations/

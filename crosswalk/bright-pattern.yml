@@ -1,0 +1,14 @@
+provider: bright-pattern
+apis_io: https://apis.io/providers/bright-pattern/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  group:
+    path_segment:
+    - team
+    - teams
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/bright-pattern-configuration-openapi.yml#GET /configapi/v2/team
+    - openapi/_original/bright-pattern-real-time-statistics-openapi.yml#GET /statsapi/cfg/teams

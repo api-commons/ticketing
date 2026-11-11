@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/ticketing/main/schema/agent.json",
+  "title": "Agent",
+  "description": "The common agent in Help Desk and Ticketing, distilled from 10 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.7,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "id"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.7,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "name",
+        "displayName"
+      ]
+    },
+    "role": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.4,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "role",
+        "roles",
+        "role_ids",
+        "type",
+        "roleId"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.3,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "createdAt",
+        "created_at"
+      ],
+      "format": "date-time"
+    },
+    "email": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.3,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "email",
+        "emailAddress"
+      ],
+      "format": "email"
+    },
+    "is_active": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.3,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "status",
+        "available"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "ticketing",
+    "concept": "agent",
+    "providers": 10,
+    "generated": "2026-11-10"
+  }
+}

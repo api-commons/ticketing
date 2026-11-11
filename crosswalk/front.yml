@@ -1,0 +1,101 @@
+provider: front
+apis_io: https://apis.io/providers/front/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - conversations
+    properties:
+      status:
+      - status
+      - status_id
+      id: id
+      subject: subject
+      created_at: created_at
+      assignee_id:
+      - assignee
+      - assignee_id
+      updated_at: updated_at
+      custom_fields: custom_fields
+      tags:
+      - tags
+      - tag_ids
+      type: type
+      group_id: inbox_id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/front-core-api-openapi.json#DELETE /conversations/{conversation_id}
+    - openapi/_original/front-core-api-openapi.json#GET /contacts/{contact_id}/conversations
+    - openapi/_original/front-core-api-openapi.json#GET /conversations
+    - openapi/_original/front-core-api-openapi.json#GET /conversations/{conversation_id}
+    - openapi/_original/front-core-api-openapi.json#GET /inboxes/{inbox_id}/conversations
+  ticket_message:
+    path_segment:
+    - comments
+    - messages
+    properties:
+      id: id
+      body:
+      - body
+      - text
+      attachments: attachments
+      author_id:
+      - author
+      - author_id
+      created_at: created_at
+      type: type
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/front-core-api-openapi.json#GET /conversations/{conversation_id}/comments
+    - openapi/_original/front-core-api-openapi.json#GET /conversations/{conversation_id}/messages
+    - openapi/_original/front-core-api-openapi.json#POST /conversations/{conversation_id}/comments
+    - openapi/_original/front-core-api-openapi.json#POST /conversations/{conversation_id}/messages
+  requester:
+    path_segment:
+    - contacts
+    properties:
+      id: id
+      name: name
+      custom_fields: custom_fields
+      avatar_url: avatar_url
+    core_coverage: 0.4
+    evidence:
+    - openapi/_original/front-core-api-openapi.json#DELETE /accounts/{account_id}/contacts
+    - openapi/_original/front-core-api-openapi.json#DELETE /contact_groups/{contact_group_id}/contacts
+    - openapi/_original/front-core-api-openapi.json#DELETE /contact_lists/{contact_list_id}/contacts
+    - openapi/_original/front-core-api-openapi.json#DELETE /contacts/{contact_id}
+    - openapi/_original/front-core-api-openapi.json#GET /accounts/{account_id}/contacts
+  group:
+    path_segment:
+    - teams
+    properties:
+      name: name
+      id: id
+      agent_ids: members
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/front-core-api-openapi.json#DELETE /teammate_groups/{teammate_group_id}/teams
+    - openapi/_original/front-core-api-openapi.json#GET /teammate_groups/{teammate_group_id}/teams
+    - openapi/_original/front-core-api-openapi.json#GET /teams
+    - openapi/_original/front-core-api-openapi.json#GET /teams/{team_id}
+    - openapi/_original/front-core-api-openapi.json#POST /teammate_groups/{teammate_group_id}/teams
+  organization:
+    path_segment:
+    - accounts
+    properties:
+      id: id
+      name: name
+      created_at: created_at
+      custom_fields: custom_fields
+      notes: description
+      updated_at: updated_at
+      domains: domains
+      logo_url: logo_url
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/front-core-api-openapi.json#DELETE /accounts/{account_id}
+    - openapi/_original/front-core-api-openapi.json#GET /accounts
+    - openapi/_original/front-core-api-openapi.json#GET /accounts/{account_id}
+    - openapi/_original/front-core-api-openapi.json#PATCH /accounts/{account_id}
+    - openapi/_original/front-core-api-openapi.json#POST /accounts

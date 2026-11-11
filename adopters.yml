@@ -1,0 +1,325 @@
+context: ticketing
+generated: '2026-11-10'
+adopters:
+- provider: ada
+  apis_io: https://apis.io/providers/ada/
+  crosswalk: crosswalk/ada.yml
+  concepts:
+  - requester
+- provider: agile-crm
+  apis_io: https://apis.io/providers/agile-crm/
+  crosswalk: crosswalk/agile-crm.yml
+  concepts:
+  - requester
+  - ticket
+  - ticket_message
+- provider: assembled
+  apis_io: https://apis.io/providers/assembled/
+  crosswalk: crosswalk/assembled.yml
+  concepts:
+  - group
+- provider: atlassian-jira
+  apis_io: https://apis.io/providers/atlassian-jira/
+  crosswalk: crosswalk/atlassian-jira.yml
+  concepts:
+  - ticket
+- provider: atomicwork
+  apis_io: https://apis.io/providers/atomicwork/
+  crosswalk: crosswalk/atomicwork.yml
+  concepts:
+  - ticket
+  - ticket_message
+- provider: avoca
+  apis_io: https://apis.io/providers/avoca/
+  crosswalk: crosswalk/avoca.yml
+  concepts:
+  - group
+- provider: bright-pattern
+  apis_io: https://apis.io/providers/bright-pattern/
+  crosswalk: crosswalk/bright-pattern.yml
+  concepts:
+  - group
+- provider: chatbase
+  apis_io: https://apis.io/providers/chatbase/
+  crosswalk: crosswalk/chatbase.yml
+  concepts:
+  - requester
+- provider: chatwoot
+  apis_io: https://apis.io/providers/chatwoot/
+  crosswalk: crosswalk/chatwoot.yml
+  concepts:
+  - agent
+  - group
+  - requester
+  - ticket
+  - ticket_message
+- provider: crisp
+  apis_io: https://apis.io/providers/crisp/
+  crosswalk: crosswalk/crisp.yml
+  concepts:
+  - ticket
+- provider: dixa
+  apis_io: https://apis.io/providers/dixa/
+  crosswalk: crosswalk/dixa.yml
+  concepts:
+  - agent
+  - group
+  - requester
+  - ticket
+  - ticket_message
+- provider: entergram
+  apis_io: https://apis.io/providers/entergram/
+  crosswalk: crosswalk/entergram.yml
+  concepts:
+  - group
+  - ticket
+  - ticket_message
+- provider: freshchat
+  apis_io: https://apis.io/providers/freshchat/
+  crosswalk: crosswalk/freshchat.yml
+  concepts:
+  - agent
+  - group
+  - ticket
+  - ticket_message
+- provider: freshdesk
+  apis_io: https://apis.io/providers/freshdesk/
+  crosswalk: crosswalk/freshdesk.yml
+  concepts:
+  - agent
+  - group
+  - organization
+  - requester
+  - ticket
+  - ticket_message
+- provider: freshservice
+  apis_io: https://apis.io/providers/freshservice/
+  crosswalk: crosswalk/freshservice.yml
+  concepts:
+  - agent
+  - requester
+  - ticket
+- provider: front
+  apis_io: https://apis.io/providers/front/
+  crosswalk: crosswalk/front.yml
+  concepts:
+  - group
+  - organization
+  - requester
+  - ticket
+  - ticket_message
+- provider: frontline
+  apis_io: https://apis.io/providers/frontline/
+  crosswalk: crosswalk/frontline.yml
+  concepts:
+  - agent
+- provider: genesys
+  apis_io: https://apis.io/providers/genesys/
+  crosswalk: crosswalk/genesys.yml
+  concepts:
+  - agent
+  - group
+  - organization
+  - requester
+  - ticket
+  - ticket_message
+- provider: gladly
+  apis_io: https://apis.io/providers/gladly/
+  crosswalk: crosswalk/gladly.yml
+  concepts:
+  - agent
+  - group
+  - organization
+  - ticket
+  - ticket_message
+- provider: gorgias
+  apis_io: https://apis.io/providers/gorgias/
+  crosswalk: crosswalk/gorgias.yml
+  concepts:
+  - group
+  - requester
+  - ticket
+  - ticket_message
+- provider: groove
+  apis_io: https://apis.io/providers/groove/
+  crosswalk: crosswalk/groove.yml
+  concepts:
+  - agent
+  - group
+  - requester
+  - ticket
+- provider: harmony
+  apis_io: https://apis.io/providers/harmony/
+  crosswalk: crosswalk/harmony.yml
+  concepts:
+  - ticket
+- provider: hiver
+  apis_io: https://apis.io/providers/hiver/
+  crosswalk: crosswalk/hiver.yml
+  concepts:
+  - ticket
+  - ticket_message
+- provider: hootsuite
+  apis_io: https://apis.io/providers/hootsuite/
+  crosswalk: crosswalk/hootsuite.yml
+  concepts:
+  - group
+  - organization
+- provider: hubspot
+  apis_io: https://apis.io/providers/hubspot/
+  crosswalk: crosswalk/hubspot.yml
+  concepts:
+  - group
+  - organization
+  - ticket
+  - ticket_message
+- provider: intercom
+  apis_io: https://apis.io/providers/intercom/
+  crosswalk: crosswalk/intercom.yml
+  concepts:
+  - organization
+  - requester
+  - ticket
+- provider: jira
+  apis_io: https://apis.io/providers/jira/
+  crosswalk: crosswalk/jira.yml
+  concepts:
+  - group
+  - organization
+  - requester
+- provider: kaseya
+  apis_io: https://apis.io/providers/kaseya/
+  crosswalk: crosswalk/kaseya.yml
+  concepts:
+  - group
+  - organization
+  - requester
+  - ticket
+  - ticket_message
+- provider: khoros-ai
+  apis_io: https://apis.io/providers/khoros-ai/
+  crosswalk: crosswalk/khoros-ai.yml
+  concepts:
+  - group
+  - requester
+  - ticket
+- provider: klaus
+  apis_io: https://apis.io/providers/klaus/
+  crosswalk: crosswalk/klaus.yml
+  concepts:
+  - ticket
+- provider: kustomer
+  apis_io: https://apis.io/providers/kustomer/
+  crosswalk: crosswalk/kustomer.yml
+  concepts:
+  - requester
+  - ticket
+- provider: maven-agi
+  apis_io: https://apis.io/providers/maven-agi/
+  crosswalk: crosswalk/maven-agi.yml
+  concepts:
+  - agent
+- provider: moveworks
+  apis_io: https://apis.io/providers/moveworks/
+  crosswalk: crosswalk/moveworks.yml
+  concepts:
+  - group
+- provider: papercups
+  apis_io: https://apis.io/providers/papercups/
+  crosswalk: crosswalk/papercups.yml
+  concepts:
+  - requester
+  - ticket
+- provider: pixiebrix
+  apis_io: https://apis.io/providers/pixiebrix/
+  crosswalk: crosswalk/pixiebrix.yml
+  concepts:
+  - group
+  - organization
+- provider: pylon
+  apis_io: https://apis.io/providers/pylon/
+  crosswalk: crosswalk/pylon.yml
+  concepts:
+  - group
+  - organization
+  - requester
+  - ticket
+- provider: pypestream
+  apis_io: https://apis.io/providers/pypestream/
+  crosswalk: crosswalk/pypestream.yml
+  concepts:
+  - organization
+- provider: salesforce
+  apis_io: https://apis.io/providers/salesforce/
+  crosswalk: crosswalk/salesforce.yml
+  concepts:
+  - group
+- provider: salesforce-service-cloud
+  apis_io: https://apis.io/providers/salesforce-service-cloud/
+  crosswalk: crosswalk/salesforce-service-cloud.yml
+  concepts:
+  - requester
+  - ticket
+- provider: servicedesk-plus
+  apis_io: https://apis.io/providers/servicedesk-plus/
+  crosswalk: crosswalk/servicedesk-plus.yml
+  concepts:
+  - ticket
+- provider: servicenow
+  apis_io: https://apis.io/providers/servicenow/
+  crosswalk: crosswalk/servicenow.yml
+  concepts:
+  - requester
+- provider: solarwinds
+  apis_io: https://apis.io/providers/solarwinds/
+  crosswalk: crosswalk/solarwinds.yml
+  concepts:
+  - group
+- provider: stellaconnect
+  apis_io: https://apis.io/providers/stellaconnect/
+  crosswalk: crosswalk/stellaconnect.yml
+  concepts:
+  - ticket
+- provider: tidio
+  apis_io: https://apis.io/providers/tidio/
+  crosswalk: crosswalk/tidio.yml
+  concepts:
+  - agent
+  - group
+  - requester
+  - ticket
+  - ticket_message
+- provider: trengo
+  apis_io: https://apis.io/providers/trengo/
+  crosswalk: crosswalk/trengo.yml
+  concepts:
+  - group
+  - requester
+  - ticket
+  - ticket_message
+- provider: zendesk
+  apis_io: https://apis.io/providers/zendesk/
+  crosswalk: crosswalk/zendesk.yml
+  concepts:
+  - agent
+  - group
+  - organization
+  - ticket
+  - ticket_message
+- provider: zoho
+  apis_io: https://apis.io/providers/zoho/
+  crosswalk: crosswalk/zoho.yml
+  concepts:
+  - agent
+  - group
+  - organization
+  - requester
+  - ticket
+  - ticket_message
+- provider: zoho-desk
+  apis_io: https://apis.io/providers/zoho-desk/
+  crosswalk: crosswalk/zoho-desk.yml
+  concepts:
+  - agent
+  - requester
+  - ticket

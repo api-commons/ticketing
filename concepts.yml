@@ -1,0 +1,131 @@
+# The help desk and ticketing bounded context. See ../schema-commons for the method;
+# the only judgement in this repo is in this file.
+#
+# Cohort decision: the APIs.io tag "Ticketing" (108 providers) is NOT used. It mixes
+# support tickets with event and transit ticketing, whose /tickets are a seat or a fare,
+# not a request for help. Help desk, customer service and ITSM tags define the cohort.
+context: ticketing
+name: Help Desk and Ticketing
+tags: [Customer Service, Help Desk, ITSM, Customer Support, Service Desk, IT Support,
+       CustomerSupport, Customer-Support, Support Automation, Support]
+
+envelope: [_links, _pagination, _results, data, success, errors, warnings, count, total, page, meta, links, value, results,
+           next, previous, has_more, message, status_code, ids, next_page, previous_page]
+
+common_fields:
+  id: [uuid, guid, object_id, record_id, display_id]
+  created_at: [created, created_date, created_time, createdon, date_created, create_time, creation_date, opened_at, sys_created_on]
+  updated_at: [updated, updated_date, modified_at, modifiedon, last_modified, date_modified, update_time, modified_date, updated_time, last_updated, sys_updated_on]
+  custom_fields: [custom_field_values, custom_properties, custom, customfields, fields, properties, attributes]
+  tags: [tag_ids, labels, label_ids, tag_list]
+  external_id: [foreign_id, source_id]
+  is_deleted: [deleted, archived, is_archived, trashed]
+  name: [display_name, title, full_name]
+  email: [email_address, primary_email, emails]
+  phone: [phone_number, phones, mobile, work_phone]
+
+concepts:
+  ticket:
+    segments: [tickets, ticket, cases, case, incidents, incident, issues, requests, conversations]
+    aliases:
+      subject: [title, name, short_description, summary, raw_subject]
+      description: [body, content, details, issue_description, message]
+      status: [state, status_id, ticket_status, incident_state]
+      priority: [priority_id, urgency, severity]
+      type: [ticket_type, type_id, category, kind]
+      requester_id: [customer_id, contact_id, requester, requested_by, caller_id, submitter_id, user_id, reporter_id]
+      assignee_id: [assigned_to, assignee, agent_id, responder_id, owner_id, assigned_agent_id, assigned_to_id]
+      group_id: [team_id, assignment_group, queue_id, group, department_id, inbox_id]
+      organization_id: [company_id, account_id, org_id]
+      channel: [source, via, origin, contact_source]
+      due_at: [due_by, due_date, due, resolution_due_by, sla_due]
+      resolved_at: [closed_at, resolved_date, closed_date, solved_at, closed]
+      cc_ids: [cc_emails, ccs, collaborator_ids, watchers, followers, follower_ids]
+  ticket_message:
+    # Only counted under a ticket path: /tickets/{id}/messages, not a forum's /posts.
+    under: [tickets, ticket, cases, case, incidents, incident, issues, requests, conversations]
+    path: /tickets/{ticket_id}/messages
+    segments: [comments, comment, replies, reply, notes, messages, threads, worknotes, posts, articles]
+    aliases:
+      body: [content, text, html_body, message, body_text, note, html, plain_body]
+      author_id: [user_id, created_by, agent_id, sender_id, from_id, author]
+      is_public: [public, private, is_private, internal, visibility]
+      ticket_id: [case_id, incident_id, conversation_id]
+      attachments: [attachment_ids, files, uploads]
+  requester:
+    segments: [customers, customer, contacts, contact, requesters, requester, end_users, end-users, endusers]
+    aliases:
+      organization_id: [company_id, account_id, org_id, company]
+      time_zone: [timezone, tz]
+      language: [locale, lang]
+  agent:
+    segments: [agents, agent, staff, technicians, operators]
+    aliases:
+      role: [role_id, role_ids, roles, type]
+      is_active: [active, enabled, available, status]
+      group_ids: [groups, team_ids, teams]
+      time_zone: [timezone, tz]
+  group:
+    segments: [groups, group, teams, team, queues, queue, departments, department]
+    aliases:
+      description: [details, about]
+      agent_ids: [members, member_ids, agents, user_ids]
+  organization:
+    segments: [organizations, organization, organisations, companies, company, accounts]
+    aliases:
+      domains: [domain, domain_names, email_domains]
+      notes: [note, description, details]
+# sla_policy was measured and dropped: 3 providers expose SLA policies in their own
+# OpenAPI, below the three-provider floor once schemas are read. Revisit as the cohort grows.
+
+# Reviewed by hand: every provider counted only through an ambiguous segment
+# (conversations, requests, issues, incidents, contacts, customers, teams, accounts).
+#
+# Conversations are kept where they ARE the support ticket -- a shared-inbox thread with a
+# status and an assignee (Intercom, Gladly, Chatwoot, Kustomer, Hiver, Front-style
+# inboxes). They are excluded where they are AI-assistant transcripts or analytics
+# exports, which record a bot's session, not a request someone is working.
+exclude:
+  ticket:
+    ada: /export/conversations is an AI-assistant transcript export
+    asapp: AI contact-center conversation records
+    crescendo: /reporting/.../assistant/conversations is AI assistant reporting
+    cuein: conversation analytics, not tickets
+    hootsuite: /virtual-agent/conversations is a bot session
+    inkeep: AI assistant chat sessions
+    maven-agi: AI agent conversations
+    moveworks: AI assistant conversations
+    moveworks-servicenow: AI assistant conversation records
+    lorikeet: AI support agent sessions
+    frontline: AI agent conversations
+    jira: /rest/operations/1.0/incidents are operational incidents (Opsgenie-style), not service requests
+    salesforce: /chatter/groups/{id}/members/requests are group-join requests
+    chat: a generic chat SDK's conversations
+    google-cloud-contact-center-ai: conversation analytics records
+    assembled: /assist/conversations are AI-assist sessions in a workforce tool
+  ticket_message:
+    ada: messages of an AI-assistant transcript
+    asapp: messages of an AI contact-center conversation
+    lorikeet: messages of an AI agent session
+    maven-agi: messages of an AI agent conversation
+    moveworks: messages of an AI assistant conversation
+    pypestream: bot conversation messages
+    chat: messages in a generic chat SDK
+    google-business-messages: consumer messaging, not ticket replies
+    khoros-ai: /conversations/calendar/messages is scheduled publishing
+  requester:
+    entergram: /contacts are Telegram contacts
+    hubspot: the matched path is a sequence enrollment, not a contact resource
+    pixiebrix: /contacts are deployment notification recipients
+    salesforce: Marketing Cloud contact deletion, not a support requester
+    solarwinds: /customer is the tenant account
+  organization:
+    chatwoot: /platform/api/v1/accounts are tenant accounts
+    dixa: /organization is the Dixa tenant
+    entergram: /accounts are connected messaging accounts
+    frontline: /channels/instagram/accounts are social channel accounts
+    khoros-ai: /export/accounts is an export job
+
+# One company, several catalog listings: merged under the first slug.
+duplicates:
+  khoros-ai: [lithium]

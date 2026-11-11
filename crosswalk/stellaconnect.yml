@@ -1,0 +1,15 @@
+provider: stellaconnect
+apis_io: https://apis.io/providers/stellaconnect/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - requests
+    properties:
+      channel: channel
+      custom_fields: custom_properties
+      tags: tags
+    core_coverage: 0.111
+    evidence:
+    - openapi/_original/stellaconnect-requests-openapi-original.yml#POST /v1/requests

@@ -1,0 +1,611 @@
+openapi: 3.1.0
+info:
+  title: Help Desk and Ticketing (API Commons)
+  version: '2026-11-10'
+  description: 'The common Help Desk and Ticketing interface, distilled from the harvested OpenAPI of 77 providers
+    in the APIs.io catalog. Not a product: no one serves this API. It is the shape the market already shares, measured,
+    so that providers, agents and integrators can map to one vocabulary. See profile.yml.'
+  license:
+    name: CC BY-NC-SA 4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+paths:
+  /tickets:
+    post:
+      operationId: createTicket
+      summary: Create a ticket
+      tags:
+      - Tickets
+      x-commons-tier: core
+      x-commons-share: 0.879
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id001
+                $ref: '#/components/schemas/Ticket'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+    get:
+      operationId: listTickets
+      summary: List tickets
+      tags:
+      - Tickets
+      x-commons-tier: core
+      x-commons-share: 0.818
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id001
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /tickets/{ticket_id}:
+    parameters:
+    - $ref: '#/components/parameters/ticket_id'
+    get:
+      operationId: getTicket
+      summary: Get a ticket
+      tags:
+      - Tickets
+      x-commons-tier: core
+      x-commons-share: 0.848
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+    patch:
+      operationId: updateTicket
+      summary: Update a ticket
+      tags:
+      - Tickets
+      x-commons-tier: core
+      x-commons-share: 0.697
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+    delete:
+      operationId: deleteTicket
+      summary: Delete a ticket
+      tags:
+      - Tickets
+      x-commons-tier: extended
+      x-commons-share: 0.485
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+  /tickets/{ticket_id}/messages:
+    parameters:
+    - $ref: '#/components/parameters/ticket_id'
+    post:
+      operationId: createTicketMessage
+      summary: Create a ticket message
+      tags:
+      - Ticket Messages
+      x-commons-tier: core
+      x-commons-share: 0.889
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id002
+                $ref: '#/components/schemas/TicketMessage'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+    get:
+      operationId: listTicketMessages
+      summary: List ticket messages
+      tags:
+      - Ticket Messages
+      x-commons-tier: core
+      x-commons-share: 0.722
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id002
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /tickets/{ticket_id}/messages/{ticket_message_id}:
+    parameters:
+    - $ref: '#/components/parameters/ticket_id'
+    - $ref: '#/components/parameters/ticket_message_id'
+    get:
+      operationId: getTicketMessage
+      summary: Get a ticket message
+      tags:
+      - Ticket Messages
+      x-commons-tier: extended
+      x-commons-share: 0.389
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+    patch:
+      operationId: updateTicketMessage
+      summary: Update a ticket message
+      tags:
+      - Ticket Messages
+      x-commons-tier: extended
+      x-commons-share: 0.333
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+    delete:
+      operationId: deleteTicketMessage
+      summary: Delete a ticket message
+      tags:
+      - Ticket Messages
+      x-commons-tier: extended
+      x-commons-share: 0.278
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+  /requesters:
+    post:
+      operationId: createRequester
+      summary: Create a requester
+      tags:
+      - Requesters
+      x-commons-tier: core
+      x-commons-share: 0.958
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id003
+                $ref: '#/components/schemas/Requester'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+    get:
+      operationId: listRequesters
+      summary: List requesters
+      tags:
+      - Requesters
+      x-commons-tier: core
+      x-commons-share: 0.917
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id003
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /requesters/{requester_id}:
+    parameters:
+    - $ref: '#/components/parameters/requester_id'
+    get:
+      operationId: getRequester
+      summary: Get a requester
+      tags:
+      - Requesters
+      x-commons-tier: core
+      x-commons-share: 0.875
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+    patch:
+      operationId: updateRequester
+      summary: Update a requester
+      tags:
+      - Requesters
+      x-commons-tier: core
+      x-commons-share: 0.75
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+    delete:
+      operationId: deleteRequester
+      summary: Delete a requester
+      tags:
+      - Requesters
+      x-commons-tier: core
+      x-commons-share: 0.583
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+  /agents:
+    get:
+      operationId: listAgents
+      summary: List agents
+      tags:
+      - Agents
+      x-commons-tier: core
+      x-commons-share: 1.0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id004
+                  $ref: '#/components/schemas/Agent'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createAgent
+      summary: Create a agent
+      tags:
+      - Agents
+      x-commons-tier: core
+      x-commons-share: 0.643
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+  /agents/{agent_id}:
+    parameters:
+    - $ref: '#/components/parameters/agent_id'
+    get:
+      operationId: getAgent
+      summary: Get a agent
+      tags:
+      - Agents
+      x-commons-tier: core
+      x-commons-share: 0.786
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+    patch:
+      operationId: updateAgent
+      summary: Update a agent
+      tags:
+      - Agents
+      x-commons-tier: core
+      x-commons-share: 0.714
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+    delete:
+      operationId: deleteAgent
+      summary: Delete a agent
+      tags:
+      - Agents
+      x-commons-tier: core
+      x-commons-share: 0.571
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+  /groups:
+    get:
+      operationId: listGroups
+      summary: List groups
+      tags:
+      - Groups
+      x-commons-tier: core
+      x-commons-share: 0.963
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id005
+                  $ref: '#/components/schemas/Group'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createGroup
+      summary: Create a group
+      tags:
+      - Groups
+      x-commons-tier: core
+      x-commons-share: 0.667
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+  /groups/{group_id}:
+    parameters:
+    - $ref: '#/components/parameters/group_id'
+    get:
+      operationId: getGroup
+      summary: Get a group
+      tags:
+      - Groups
+      x-commons-tier: core
+      x-commons-share: 0.593
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+    patch:
+      operationId: updateGroup
+      summary: Update a group
+      tags:
+      - Groups
+      x-commons-tier: extended
+      x-commons-share: 0.407
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+    delete:
+      operationId: deleteGroup
+      summary: Delete a group
+      tags:
+      - Groups
+      x-commons-tier: extended
+      x-commons-share: 0.37
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+  /organizations:
+    get:
+      operationId: listOrganizations
+      summary: List organizations
+      tags:
+      - Organizations
+      x-commons-tier: core
+      x-commons-share: 0.929
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id006
+                  $ref: '#/components/schemas/Organization'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createOrganization
+      summary: Create a organization
+      tags:
+      - Organizations
+      x-commons-tier: core
+      x-commons-share: 0.786
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
+  /organizations/{organization_id}:
+    parameters:
+    - $ref: '#/components/parameters/organization_id'
+    get:
+      operationId: getOrganization
+      summary: Get a organization
+      tags:
+      - Organizations
+      x-commons-tier: core
+      x-commons-share: 0.786
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+    patch:
+      operationId: updateOrganization
+      summary: Update a organization
+      tags:
+      - Organizations
+      x-commons-tier: core
+      x-commons-share: 0.643
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
+    delete:
+      operationId: deleteOrganization
+      summary: Delete a organization
+      tags:
+      - Organizations
+      x-commons-tier: core
+      x-commons-share: 0.571
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+components:
+  schemas:
+    Ticket:
+      $ref: ./schema/ticket.json
+    TicketMessage:
+      $ref: ./schema/ticket_message.json
+    Requester:
+      $ref: ./schema/requester.json
+    Agent:
+      $ref: ./schema/agent.json
+    Group:
+      $ref: ./schema/group.json
+    Organization:
+      $ref: ./schema/organization.json
+  parameters:
+    ticket_id:
+      name: ticket_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ticket_message_id:
+      name: ticket_message_id
+      in: path
+      required: true
+      schema:
+        type: string
+    requester_id:
+      name: requester_id
+      in: path
+      required: true
+      schema:
+        type: string
+    agent_id:
+      name: agent_id
+      in: path
+      required: true
+      schema:
+        type: string
+    group_id:
+      name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    organization_id:
+      name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string

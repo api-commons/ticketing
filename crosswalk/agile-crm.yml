@@ -1,0 +1,29 @@
+provider: agile-crm
+apis_io: https://apis.io/providers/agile-crm/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/agile-crm-openapi.yml#DELETE /api/tickets/{id}
+  ticket_message:
+    path_segment:
+    - notes
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/agile-crm-openapi.yml#GET /api/tickets/notes/{ticket_id}
+  requester:
+    path_segment:
+    - contacts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/agile-crm-openapi.yml#DELETE /api/contacts/{id}
+    - openapi/_original/agile-crm-openapi.yml#GET /api/contacts
+    - openapi/_original/agile-crm-openapi.yml#GET /api/contacts/{id}
+    - openapi/_original/agile-crm-openapi.yml#POST /api/contacts

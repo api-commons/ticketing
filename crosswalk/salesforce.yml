@@ -1,0 +1,16 @@
+provider: salesforce
+apis_io: https://apis.io/providers/salesforce/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  group:
+    path_segment:
+    - groups
+    properties:
+      name: name
+      id: id
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/salesforce-openapi.yml#GET /data/v64.0/chatter/groups
+    - openapi/_original/salesforce-openapi.yml#POST /data/v64.0/chatter/groups

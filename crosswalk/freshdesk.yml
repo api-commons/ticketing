@@ -1,0 +1,131 @@
+provider: freshdesk
+apis_io: https://apis.io/providers/freshdesk/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    - conversations
+    properties:
+      status: status
+      id: id
+      subject: subject
+      created_at: created_at
+      assignee_id: responder_id
+      priority: priority
+      channel: source
+      updated_at: updated_at
+      requester_id:
+      - requester_id
+      - user_id
+      custom_fields: custom_fields
+      tags: tags
+      description:
+      - description
+      - body
+      type: type
+      group_id: group_id
+      organization_id: company_id
+      cc_ids: cc_emails
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/freshdesk-rest-api-openapi.yml#DELETE /conversations/{conversation_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#DELETE /tickets/{ticket_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /search/tickets
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /tickets
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /tickets/{ticket_id}
+  ticket_message:
+    path_segment:
+    - reply
+    - notes
+    properties:
+      id: id
+      body:
+      - body
+      - body_text
+      attachments: attachments
+      ticket_id: ticket_id
+      author_id: user_id
+      created_at: created_at
+      is_public: private
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/freshdesk-rest-api-openapi.yml#POST /tickets/{ticket_id}/notes
+    - openapi/_original/freshdesk-rest-api-openapi.yml#POST /tickets/{ticket_id}/reply
+  requester:
+    path_segment:
+    - contacts
+    properties:
+      id: id
+      name: name
+      email: email
+      phone:
+      - phone
+      - mobile
+      created_at: created_at
+      organization_id: company_id
+      custom_fields: custom_fields
+      updated_at: updated_at
+      time_zone: time_zone
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/freshdesk-rest-api-openapi.yml#DELETE /contacts/{contact_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /contacts
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /contacts/{contact_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /search/contacts
+    - openapi/_original/freshdesk-rest-api-openapi.yml#POST /contacts
+  agent:
+    path_segment:
+    - agents
+    properties:
+      id: id
+      role:
+      - role_ids
+      - type
+      created_at: created_at
+      is_active: available
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/freshdesk-rest-api-openapi.yml#DELETE /agents/{agent_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /agents
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /agents/{agent_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#PUT /agents/{agent_id}
+  group:
+    path_segment:
+    - groups
+    properties:
+      name: name
+      id: id
+      agent_ids: agent_ids
+      created_at: created_at
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/freshdesk-rest-api-openapi.yml#DELETE /groups/{group_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /groups
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /groups/{group_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#POST /groups
+    - openapi/_original/freshdesk-rest-api-openapi.yml#PUT /groups/{group_id}
+  organization:
+    path_segment:
+    - companies
+    properties:
+      id: id
+      name: name
+      created_at: created_at
+      custom_fields: custom_fields
+      notes:
+      - description
+      - note
+      updated_at: updated_at
+      domains: domains
+      industry: industry
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/freshdesk-rest-api-openapi.yml#DELETE /companies/{company_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /companies
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /companies/{company_id}
+    - openapi/_original/freshdesk-rest-api-openapi.yml#GET /search/companies
+    - openapi/_original/freshdesk-rest-api-openapi.yml#POST /companies

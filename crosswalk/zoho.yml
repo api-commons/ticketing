@@ -1,0 +1,128 @@
+provider: zoho
+apis_io: https://apis.io/providers/zoho/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      status: status
+      id: id
+      subject: subject
+      created_at: createdTime
+      assignee_id:
+      - assignee
+      - assigneeId
+      priority: priority
+      channel:
+      - channel
+      - source
+      requester_id: contactId
+      custom_fields: customFields
+      description: description
+      type: category
+      group_id:
+      - departmentId
+      - teamId
+      organization_id: accountId
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/Account.json#GET /api/v1/accounts/{accountId}/tickets
+    - openapi/_original/BugInteg.json#GET /api/v1/bug/{bugId}/tickets
+    - openapi/_original/Finance.json#GET /api/v1/finance/invoices/{id}/tickets
+    - openapi/_original/Ticket.json#GET /api/v1/contacts/{contactId}/tickets
+    - openapi/_original/Ticket.json#GET /api/v1/products/{productId}/tickets
+  ticket_message:
+    path_segment:
+    - comments
+    - threads
+    properties:
+      id: id
+      body: content
+      attachments:
+      - attachments
+      - attachmentIds
+      is_public: isPublic
+      type: type
+      name: name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/Thread.json#GET /api/v1/tickets/{ticketId}/threads
+    - openapi/_original/TicketComment.json#DELETE /api/v1/tickets/{ticketId}/comments/{commentId}
+    - openapi/_original/TicketComment.json#GET /api/v1/tickets/{ticketId}/comments
+    - openapi/_original/TicketComment.json#GET /api/v1/tickets/{ticketId}/comments/{commentId}
+    - openapi/_original/TicketComment.json#PATCH /api/v1/tickets/{ticketId}/comments/{commentId}
+  requester:
+    path_segment:
+    - contacts
+    properties:
+      id: id
+      name: title
+      phone: mobile
+      created_at: createdTime
+      custom_fields: customFields
+      city: city
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/Contact.json#GET /api/v1/accounts/{accountId}/contacts
+    - openapi/_original/Contact.json#GET /api/v1/contacts
+    - openapi/_original/Contact.json#GET /api/v1/contacts/{contactId}
+    - openapi/_original/Contact.json#GET /api/v1/products/{productId}/contacts
+    - openapi/_original/Contact.json#PATCH /api/v1/contacts/{contactId}
+  agent:
+    path_segment:
+    - agents
+    properties:
+      id: id
+      name: name
+      role:
+      - roleId
+      - role
+      is_active: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/Agent.json#GET /api/v1/agents
+    - openapi/_original/Agent.json#GET /api/v1/agents/{agentId}
+    - openapi/_original/Agent.json#PATCH /api/v1/agents/{agentId}
+    - openapi/_original/Agent.json#POST /api/v1/agents
+    - openapi/_original/Department.json#GET /api/v1/departments/{departmentId}/agents
+  group:
+    path_segment:
+    - groups
+    - teams
+    - departments
+    properties:
+      name: name
+      id: id
+      agent_ids: agents
+      created_at: createdTime
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/Department.json#GET /api/v1/departments
+    - openapi/_original/Department.json#GET /api/v1/departments/{departmentId}
+    - openapi/_original/Department.json#PATCH /api/v1/departments/{departmentId}
+    - openapi/_original/Department.json#POST /api/v1/departments
+    - openapi/_original/HelpcenterGroups.json#DELETE /api/v1/groups/{groupId}
+  organization:
+    path_segment:
+    - accounts
+    - organizations
+    properties:
+      id: id
+      created_at: createdTime
+      custom_fields: customFields
+      notes: description
+      industry: industry
+      logo_url: logoURL
+      phone:
+      - mobile
+      - phoneNumber
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/Account.json#GET /api/v1/accounts
+    - openapi/_original/Account.json#GET /api/v1/accounts/{accountId}
+    - openapi/_original/Account.json#GET /api/v1/contacts/{contactId}/accounts
+    - openapi/_original/Account.json#GET /api/v1/products/{productId}/accounts
+    - openapi/_original/Account.json#PATCH /api/v1/accounts/{accountId}

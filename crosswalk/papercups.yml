@@ -1,0 +1,44 @@
+provider: papercups
+apis_io: https://apis.io/providers/papercups/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - conversations
+    properties:
+      status: status
+      id: id
+      assignee_id: assignee_id
+      priority: priority
+      channel: source
+      updated_at: updated_at
+      requester_id: customer_id
+      organization_id: account_id
+    core_coverage: 0.778
+    evidence:
+    - openapi/_original/papercups-openapi.yml#DELETE /conversations/{id}
+    - openapi/_original/papercups-openapi.yml#GET /conversations
+    - openapi/_original/papercups-openapi.yml#GET /conversations/{id}
+    - openapi/_original/papercups-openapi.yml#POST /conversations
+    - openapi/_original/papercups-openapi.yml#PUT /conversations/{id}
+  requester:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      phone: phone
+      external_id: external_id
+      organization_id:
+      - account_id
+      - company_id
+      updated_at: updated_at
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/papercups-openapi.yml#DELETE /customers/{id}
+    - openapi/_original/papercups-openapi.yml#GET /customers
+    - openapi/_original/papercups-openapi.yml#GET /customers/{id}
+    - openapi/_original/papercups-openapi.yml#POST /customers
+    - openapi/_original/papercups-openapi.yml#PUT /customers/{id}

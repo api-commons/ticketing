@@ -1,0 +1,42 @@
+provider: groove
+apis_io: https://apis.io/providers/groove/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/groove-openapi.yml#GET /tickets
+    - openapi/_original/groove-openapi.yml#GET /tickets/{number}
+    - openapi/_original/groove-openapi.yml#POST /tickets
+  requester:
+    path_segment:
+    - customers
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/groove-openapi.yml#GET /customers
+    - openapi/_original/groove-openapi.yml#GET /customers/{id}
+    - openapi/_original/groove-openapi.yml#PUT /customers/{id}
+  agent:
+    path_segment:
+    - agents
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/groove-openapi.yml#GET /agents
+    - openapi/_original/groove-openapi.yml#GET /agents/{id}
+  group:
+    path_segment:
+    - groups
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/groove-openapi.yml#DELETE /groups/{id}
+    - openapi/_original/groove-openapi.yml#GET /groups
+    - openapi/_original/groove-openapi.yml#GET /groups/{id}
+    - openapi/_original/groove-openapi.yml#POST /groups
+    - openapi/_original/groove-openapi.yml#PUT /groups/{id}

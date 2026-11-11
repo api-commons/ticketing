@@ -1,0 +1,24 @@
+provider: klaus
+apis_io: https://apis.io/providers/klaus/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties:
+      status: status
+      id: id
+      subject: subject
+      created_at: created
+      channel: channel
+      updated_at: updated
+      tags: tags
+      description: description
+      type: type
+      external_id: externalId
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/klaus-public-import-api-openapi-original.json#DELETE /api/import/tickets
+    - openapi/_original/klaus-public-import-api-openapi-original.json#GET /api/import/tickets/{ticketExternalId}
+    - openapi/_original/klaus-public-import-api-openapi-original.json#POST /api/import/tickets

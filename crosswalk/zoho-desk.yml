@@ -1,0 +1,38 @@
+provider: zoho-desk
+apis_io: https://apis.io/providers/zoho-desk/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/zoho-desk-openapi.yml#DELETE /tickets/{ticket_id}
+    - openapi/_original/zoho-desk-openapi.yml#GET /tickets
+    - openapi/_original/zoho-desk-openapi.yml#GET /tickets/{ticket_id}
+    - openapi/_original/zoho-desk-openapi.yml#POST /tickets
+    - openapi/_original/zoho-desk-openapi.yml#PUT /tickets/{ticket_id}
+  requester:
+    path_segment:
+    - contacts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/zoho-desk-openapi.yml#DELETE /contacts/{contact_id}
+    - openapi/_original/zoho-desk-openapi.yml#GET /contacts
+    - openapi/_original/zoho-desk-openapi.yml#GET /contacts/{contact_id}
+    - openapi/_original/zoho-desk-openapi.yml#POST /contacts
+    - openapi/_original/zoho-desk-openapi.yml#PUT /contacts/{contact_id}
+  agent:
+    path_segment:
+    - agents
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/zoho-desk-openapi.yml#DELETE /agents/{agent_id}
+    - openapi/_original/zoho-desk-openapi.yml#GET /agents
+    - openapi/_original/zoho-desk-openapi.yml#GET /agents/{agent_id}
+    - openapi/_original/zoho-desk-openapi.yml#POST /agents
+    - openapi/_original/zoho-desk-openapi.yml#PUT /agents/{agent_id}

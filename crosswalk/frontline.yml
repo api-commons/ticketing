@@ -1,0 +1,20 @@
+provider: frontline
+apis_io: https://apis.io/providers/frontline/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  agent:
+    path_segment:
+    - agents
+    properties:
+      id: id
+      name: name
+      created_at: createdAt
+      is_active: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/frontline-openapi-original.yml#DELETE /public/v1/agents/{agentId}
+    - openapi/_original/frontline-openapi-original.yml#GET /public/v1/agents
+    - openapi/_original/frontline-openapi-original.yml#GET /public/v1/agents/{agentId}
+    - openapi/_original/frontline-openapi-original.yml#POST /public/v1/agents
+    - openapi/_original/frontline-openapi-original.yml#PUT /public/v1/agents/{agentId}

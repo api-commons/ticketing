@@ -1,0 +1,12 @@
+provider: crisp
+apis_io: https://apis.io/providers/crisp/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - conversations
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/crisp-openapi.yml#GET /website/{website_id}/conversations/{page_number}

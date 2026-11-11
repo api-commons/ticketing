@@ -1,0 +1,86 @@
+provider: pylon
+apis_io: https://apis.io/providers/pylon/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - issues
+    properties:
+      status: state
+      id: id
+      subject: title
+      created_at: created_at
+      assignee_id:
+      - assignee
+      - assignee_id
+      priority: priority
+      updated_at: updated_at
+      requester_id:
+      - requester
+      - requester_id
+      - contact_id
+      custom_fields: custom_fields
+      tags: tags
+      group_id: team_id
+      organization_id: account_id
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/pylon-openapi.yml#DELETE /issues/{id}
+    - openapi/_original/pylon-openapi.yml#GET /issues
+    - openapi/_original/pylon-openapi.yml#GET /issues/{id}
+    - openapi/_original/pylon-openapi.yml#PATCH /issues/{id}
+    - openapi/_original/pylon-openapi.yml#POST /issues
+  requester:
+    path_segment:
+    - contacts
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: created_at
+      organization_id: account_id
+      custom_fields: custom_fields
+      updated_at: updated_at
+      avatar_url: avatar_url
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/pylon-openapi.yml#DELETE /contacts/{id}
+    - openapi/_original/pylon-openapi.yml#GET /contacts
+    - openapi/_original/pylon-openapi.yml#GET /contacts/{id}
+    - openapi/_original/pylon-openapi.yml#PATCH /contacts/{id}
+    - openapi/_original/pylon-openapi.yml#POST /contacts
+  group:
+    path_segment:
+    - teams
+    properties:
+      name: name
+      id: id
+      agent_ids: user_ids
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/pylon-openapi.yml#GET /teams
+    - openapi/_original/pylon-openapi.yml#GET /teams/{id}
+    - openapi/_original/pylon-openapi.yml#PATCH /teams/{id}
+    - openapi/_original/pylon-openapi.yml#POST /teams
+  organization:
+    path_segment:
+    - accounts
+    properties:
+      id: id
+      name: name
+      created_at: created_at
+      custom_fields: custom_fields
+      updated_at: updated_at
+      domains:
+      - domain
+      - domains
+      tags: tags
+      type: type
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/pylon-openapi.yml#DELETE /accounts/{id}
+    - openapi/_original/pylon-openapi.yml#GET /accounts
+    - openapi/_original/pylon-openapi.yml#GET /accounts/{id}
+    - openapi/_original/pylon-openapi.yml#PATCH /accounts
+    - openapi/_original/pylon-openapi.yml#PATCH /accounts/{id}

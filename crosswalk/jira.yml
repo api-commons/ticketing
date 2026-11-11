@@ -1,0 +1,57 @@
+provider: jira
+apis_io: https://apis.io/providers/jira/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  requester:
+    path_segment:
+    - customer
+    properties:
+      name:
+      - displayName
+      - name
+      - fullName
+      email:
+      - emailAddress
+      - email
+      organization_id: accountId
+      time_zone: timeZone
+    core_coverage: 0.4
+    evidence:
+    - openapi/_original/jira-service-management-openapi.json#DELETE /rest/servicedeskapi/servicedesk/{serviceDeskId}/customer
+    - openapi/_original/jira-service-management-openapi.json#GET /rest/servicedeskapi/servicedesk/{serviceDeskId}/customer
+    - openapi/_original/jira-service-management-openapi.json#POST /rest/servicedeskapi/customer
+    - openapi/_original/jira-service-management-openapi.json#POST /rest/servicedeskapi/servicedesk/{serviceDeskId}/customer
+  group:
+    path_segment:
+    - queue
+    - group
+    - team
+    - groups
+    properties:
+      name: name
+      id: id
+      created_at: created
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/jira-platform-openapi.json#DELETE /rest/api/3/group
+    - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/bulk/queue/{taskId}
+    - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/group
+    - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/plans/plan/{planId}/team
+    - openapi/_original/jira-platform-openapi.json#GET /rest/api/3/user/groups
+  organization:
+    path_segment:
+    - organization
+    properties:
+      id:
+      - id
+      - uuid
+      name: name
+      created_at: created
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/jira-service-management-openapi.json#DELETE /rest/servicedeskapi/organization/{organizationId}
+    - openapi/_original/jira-service-management-openapi.json#DELETE /rest/servicedeskapi/servicedesk/{serviceDeskId}/organization
+    - openapi/_original/jira-service-management-openapi.json#GET /rest/servicedeskapi/organization
+    - openapi/_original/jira-service-management-openapi.json#GET /rest/servicedeskapi/organization/{organizationId}
+    - openapi/_original/jira-service-management-openapi.json#GET /rest/servicedeskapi/servicedesk/{serviceDeskId}/organization

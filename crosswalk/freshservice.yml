@@ -1,0 +1,38 @@
+provider: freshservice
+apis_io: https://apis.io/providers/freshservice/
+context: ticketing
+generated: '2026-11-10'
+concepts:
+  ticket:
+    path_segment:
+    - tickets
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/freshservice-openapi.yml#DELETE /tickets/{id}
+    - openapi/_original/freshservice-openapi.yml#GET /tickets
+    - openapi/_original/freshservice-openapi.yml#GET /tickets/{id}
+    - openapi/_original/freshservice-openapi.yml#POST /tickets
+    - openapi/_original/freshservice-openapi.yml#PUT /tickets/{id}
+  requester:
+    path_segment:
+    - requesters
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/freshservice-openapi.yml#DELETE /requesters/{id}
+    - openapi/_original/freshservice-openapi.yml#GET /requesters
+    - openapi/_original/freshservice-openapi.yml#GET /requesters/{id}
+    - openapi/_original/freshservice-openapi.yml#POST /requesters
+    - openapi/_original/freshservice-openapi.yml#PUT /requesters/{id}
+  agent:
+    path_segment:
+    - agents
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/freshservice-openapi.yml#DELETE /agents/{id}
+    - openapi/_original/freshservice-openapi.yml#GET /agents
+    - openapi/_original/freshservice-openapi.yml#GET /agents/{id}
+    - openapi/_original/freshservice-openapi.yml#POST /agents
+    - openapi/_original/freshservice-openapi.yml#PUT /agents/{id}

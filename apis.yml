@@ -1,0 +1,60 @@
+aid: common-ticketing
+name: Help Desk and Ticketing
+type: Common
+description: 'The common Help Desk and Ticketing vocabulary, distilled from the harvested OpenAPI of 77 providers
+  in APIs.io: shared operations, JSON Schema per concept with measured adoption, and a crosswalk from the common
+  names to each provider''s own.'
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Application Programming Interface
+- API
+- Customer Service
+- Help Desk
+- ITSM
+- Customer Support
+- Common Schema
+created: '2026-11-10'
+modified: '2026-11-10'
+url: https://raw.githubusercontent.com/api-commons/ticketing/main/apis.yml
+specificationVersion: '0.20'
+apis:
+- aid: common-ticketing:ticketing
+  name: Common Help Desk and Ticketing Interface
+  description: The Help Desk and Ticketing interface the market already shares, measured.
+  humanURL: https://github.com/api-commons/ticketing
+  tags:
+  - Customer Service
+  - Help Desk
+  properties:
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/openapi.yml
+  - type: Profile
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/profile.yml
+  - type: Adopters
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/adopters.yml
+  - type: Rules
+    url: https://raw.githubusercontent.com/api-commons/schema-commons/main/ruleset/schema-commons-naming.yaml
+  - type: JSONSchema
+    name: ticket
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/schema/ticket.json
+  - type: JSONSchema
+    name: ticket_message
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/schema/ticket_message.json
+  - type: JSONSchema
+    name: requester
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/schema/requester.json
+  - type: JSONSchema
+    name: agent
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/schema/agent.json
+  - type: JSONSchema
+    name: group
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/schema/group.json
+  - type: JSONSchema
+    name: organization
+    url: https://raw.githubusercontent.com/api-commons/ticketing/main/schema/organization.json
+common:
+- type: License
+  url: https://raw.githubusercontent.com/api-commons/ticketing/main/LICENSE
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
