@@ -13,6 +13,7 @@ concepts:
       id:
       - id
       - ticketID
+      - Id
       subject:
       - title
       - Title
@@ -24,6 +25,7 @@ concepts:
       - contactID
       - ContactId
       channel: source
+      custom_fields: CustomFields
       description:
       - description
       - Details
@@ -56,9 +58,12 @@ concepts:
       attachments:
       - Attachments
       - AttachmentIds
+      author_id: CreatedBy
       ticket_id: ticketID
-      name: title
-    core_coverage: 0.5
+      name:
+      - title
+      - Name
+    core_coverage: 0.667
     evidence:
     - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Tickets/{parentId}/Notes
     - openapi/_original/kaseya-autotask-psa-openapi-original.json#GET /V1.0/Tickets/{parentId}/Notes/{id}

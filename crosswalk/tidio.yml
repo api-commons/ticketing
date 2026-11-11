@@ -8,11 +8,9 @@ concepts:
     - tickets
     properties:
       status: status
-      id:
-      - id
-      - ticket_id
-      subject: subject
+      id: id
       created_at: created_at
+      subject: subject
       priority: priority
       requester_id: contact_id
     core_coverage: 0.667

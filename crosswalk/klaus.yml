@@ -9,8 +9,8 @@ concepts:
     properties:
       status: status
       id: id
-      subject: subject
       created_at: created
+      subject: subject
       updated_at: updated
       channel: channel
       description: description

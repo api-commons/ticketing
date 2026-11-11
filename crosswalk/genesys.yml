@@ -13,13 +13,13 @@ concepts:
       - status
       - state
       id: id
+      created_at:
+      - dateCreated
+      - createdDate
       subject:
       - name
       - summary
       - subject
-      created_at:
-      - dateCreated
-      - createdDate
       assignee_id: ownerId
       priority: priority
       updated_at: dateModified
@@ -91,12 +91,8 @@ concepts:
     - queue
     properties:
       id: id
-      name:
-      - name
-      - displayName
-      agent_ids:
-      - members
-      - agentIds
+      name: name
+      agent_ids: agentIds
       created_at: dateCreated
       description: description
     core_coverage: 1.0

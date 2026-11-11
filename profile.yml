@@ -124,15 +124,28 @@ concepts:
       type: string
       spellings:
       - id
-      - ticket_id
+      - Id
       - uuid
       - displayId
+      - ticket_id
       - ticketID
-      - Id
-    - name: subject
+    - name: created_at
       tier: core
       providers: 20
       share: 0.769
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - dateCreated
+      - createdDate
+      - CreatedDate
+      - createdTime
+    - name: subject
+      tier: core
+      providers: 19
+      share: 0.731
       type: string
       spellings:
       - subject
@@ -142,19 +155,6 @@ concepts:
       - Title
       - Subject
       - raw_subject
-    - name: created_at
-      tier: core
-      providers: 19
-      share: 0.731
-      type: string
-      spellings:
-      - created_at
-      - createdAt
-      - dateCreated
-      - createdDate
-      - created
-      - CreatedDate
-      - createdTime
     - name: assignee_id
       tier: core
       providers: 17
@@ -214,20 +214,21 @@ concepts:
       - Origin
     - name: custom_fields
       tier: extended
-      providers: 11
-      share: 0.423
+      providers: 12
+      share: 0.462
       type: object
       spellings:
       - custom_fields
       - customFields
       - properties
+      - CustomFields
       - attributes
       - custom_properties
       - fields
     - name: description
       tier: extended
-      providers: 11
-      share: 0.423
+      providers: 12
+      share: 0.462
       type: string
       spellings:
       - description
@@ -293,11 +294,11 @@ concepts:
       - externalID
       - SourceId
       - externalId
-    long_tail_count: 431
+    long_tail_count: 478
     long_tail_sample:
     - cc_ids
-    - attachments
     - created_by
+    - attachments
     - due_at
     - resolved_at
     - comment
@@ -307,8 +308,10 @@ concepts:
     - email
     - is_escalated
     - language
+    - modified_by
     - ticket_number
     - url
+    - assignee_name
     - attachment_count
     - bcc_emails
     - comment_count
@@ -318,8 +321,6 @@ concepts:
     - from
     - is_deleted
     - link
-    - messages
-    - modified_by
     - number
     - open
     - phone
@@ -333,8 +334,8 @@ concepts:
     - waiting_since
     - workspace_id
     - account
-    - additional_attributes
-    - address
+    - account_code
+    - account_name
   ticket_message:
     segments_seen:
       messages: 8
@@ -372,33 +373,57 @@ concepts:
     properties:
     - name: id
       tier: core
-      providers: 14
-      share: 0.875
+      providers: 15
+      share: 0.938
       type: string
       spellings:
       - id
       - Id
     - name: body
       tier: core
-      providers: 13
-      share: 0.812
+      providers: 14
+      share: 0.875
       type: string
       spellings:
-      - content
       - body
+      - content
       - body_text
       - text
       - htmlBody
+      - html_body
+      - plain_body
     - name: attachments
       tier: core
-      providers: 12
-      share: 0.75
+      providers: 13
+      share: 0.812
       type: array
       spellings:
       - attachments
       - Attachments
       - AttachmentIds
       - attachmentIds
+    - name: author_id
+      tier: core
+      providers: 10
+      share: 0.625
+      type: integer
+      spellings:
+      - author
+      - user_id
+      - author_id
+      - sender_id
+      - agentId
+      - authorId
+      - createdBy
+      - CreatedBy
+    - name: created_at
+      tier: core
+      providers: 9
+      share: 0.562
+      type: string
+      spellings:
+      - created_at
+      - createdAt
     - name: ticket_id
       tier: core
       providers: 9
@@ -410,41 +435,20 @@ concepts:
       - ticketId
       - conversationId
       - ticketID
-    - name: author_id
-      tier: core
-      providers: 8
-      share: 0.5
-      type: string
-      spellings:
-      - author
-      - user_id
-      - sender_id
-      - agentId
-      - authorId
-      - author_id
-      - createdBy
-    - name: created_at
-      tier: core
-      providers: 8
-      share: 0.5
-      type: string
-      spellings:
-      - created_at
-      - createdAt
     - name: is_public
       tier: extended
-      providers: 5
-      share: 0.312
+      providers: 6
+      share: 0.375
       type: boolean
       spellings:
       - private
-      - is_private
       - public
+      - is_private
       - isPublic
     - name: type
       tier: extended
-      providers: 5
-      share: 0.312
+      providers: 6
+      share: 0.375
       type: string
       spellings:
       - type
@@ -465,6 +469,7 @@ concepts:
       spellings:
       - name
       - title
+      - Name
     - name: updated_at
       tier: extended
       providers: 4
@@ -473,7 +478,7 @@ concepts:
       spellings:
       - updated_at
       - updatedAt
-    long_tail_count: 166
+    long_tail_count: 175
     long_tail_sample:
     - sender
     - subject
@@ -496,9 +501,11 @@ concepts:
     - source
     - status
     - to
+    - via
     - account_id
     - additional_attributes
     - address
+    - alias
     - assigned_to
     - associate_with_contact_id
     - associated_contact_id
@@ -513,8 +520,6 @@ concepts:
     - client
     - closed_at
     - commented_time
-    - commenter
-    - commenter_id
   requester:
     segments_seen:
       contacts: 13
@@ -698,7 +703,7 @@ concepts:
       - time_zone
       - timezone
       - timeZone
-    long_tail_count: 244
+    long_tail_count: 243
     long_tail_sample:
     - active
     - country
@@ -931,8 +936,8 @@ concepts:
       - displayName
     - name: agent_ids
       tier: extended
-      providers: 9
-      share: 0.409
+      providers: 8
+      share: 0.364
       type: array
       spellings:
       - members
@@ -959,26 +964,20 @@ concepts:
       type: string
       spellings:
       - description
-    long_tail_count: 229
+    long_tail_count: 230
     long_tail_sample:
     - member_count
     - updated_at
-    - external_id
+    - type
     - group_name
     - is_default
     - is_deleted
-    - items_per_page
     - label
     - logo_url
     - metadata
-    - operations
     - queue_id
-    - resources
-    - schemas
-    - start_index
+    - ref
     - status
-    - total_results
-    - type
     - users
     - visibility
     - account_id
@@ -988,12 +987,14 @@ concepts:
     - acw_settings
     - additional_label
     - addresses
+    - agent_count_range
     - agent_owned_routing
     - allow_auto_assign
     - announcement
     - assistant
     - associated_agent_ids
     - auto_answer_only
+    - auto_delete
     - auto_ticket_assign
     - avg_first_response_time
     - avg_reply_time
@@ -1001,6 +1002,10 @@ concepts:
     - banner_photo
     - bullseye
     - business_hour_id
+    - call_functionality
+    - calling_party_name
+    - calling_party_number
+    - calls_enabled
   organization:
     segments_seen:
       accounts: 5
@@ -1142,7 +1147,7 @@ concepts:
       type: string
       spellings:
       - type
-    long_tail_count: 205
+    long_tail_count: 204
     long_tail_sample:
     - city
     - company_name

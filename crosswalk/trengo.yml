@@ -9,8 +9,8 @@ concepts:
     properties:
       status: status
       id: id
-      subject: subject
       created_at: created_at
+      subject: subject
       assignee_id: assignee
       updated_at: updated_at
       channel: channel
@@ -25,8 +25,8 @@ concepts:
       id: id
       body: body
       attachments: attachments
-      ticket_id: ticket_id
       created_at: created_at
+      ticket_id: ticket_id
       type: type
     core_coverage: 0.833
     evidence:

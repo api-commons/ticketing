@@ -11,8 +11,8 @@ concepts:
       id:
       - displayId
       - id
-      subject: title
       created_at: createdAt
+      subject: title
       assignee_id:
       - assignedTo
       - assignedToId
@@ -34,9 +34,9 @@ concepts:
     properties:
       id: id
       body: body
-      ticket_id: ticketId
       author_id: author
       created_at: createdAt
+      ticket_id: ticketId
       updated_at: updatedAt
     core_coverage: 0.833
     evidence:

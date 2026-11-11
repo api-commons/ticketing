@@ -8,8 +8,8 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.875,
-      "x-commons-providers": 14,
+      "x-commons-share": 0.938,
+      "x-commons-providers": 15,
       "x-commons-spellings": [
         "id",
         "Id"
@@ -18,27 +18,56 @@
     "body": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.812,
-      "x-commons-providers": 13,
+      "x-commons-share": 0.875,
+      "x-commons-providers": 14,
       "x-commons-spellings": [
-        "content",
         "body",
+        "content",
         "body_text",
         "text",
-        "htmlBody"
+        "htmlBody",
+        "html_body",
+        "plain_body"
       ]
     },
     "attachments": {
       "type": "array",
       "x-commons-tier": "core",
-      "x-commons-share": 0.75,
-      "x-commons-providers": 12,
+      "x-commons-share": 0.812,
+      "x-commons-providers": 13,
       "x-commons-spellings": [
         "attachments",
         "Attachments",
         "AttachmentIds",
         "attachmentIds"
       ]
+    },
+    "author_id": {
+      "type": "integer",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.625,
+      "x-commons-providers": 10,
+      "x-commons-spellings": [
+        "author",
+        "user_id",
+        "author_id",
+        "sender_id",
+        "agentId",
+        "authorId",
+        "createdBy",
+        "CreatedBy"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.562,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt"
+      ],
+      "format": "date-time"
     },
     "ticket_id": {
       "type": "integer",
@@ -53,49 +82,23 @@
         "ticketID"
       ]
     },
-    "author_id": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.5,
-      "x-commons-providers": 8,
-      "x-commons-spellings": [
-        "author",
-        "user_id",
-        "sender_id",
-        "agentId",
-        "authorId",
-        "author_id",
-        "createdBy"
-      ]
-    },
-    "created_at": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.5,
-      "x-commons-providers": 8,
-      "x-commons-spellings": [
-        "created_at",
-        "createdAt"
-      ],
-      "format": "date-time"
-    },
     "is_public": {
       "type": "boolean",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.312,
-      "x-commons-providers": 5,
+      "x-commons-share": 0.375,
+      "x-commons-providers": 6,
       "x-commons-spellings": [
         "private",
-        "is_private",
         "public",
+        "is_private",
         "isPublic"
       ]
     },
     "type": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.312,
-      "x-commons-providers": 5,
+      "x-commons-share": 0.375,
+      "x-commons-providers": 6,
       "x-commons-spellings": [
         "type"
       ]
@@ -118,7 +121,8 @@
       "x-commons-providers": 4,
       "x-commons-spellings": [
         "name",
-        "title"
+        "title",
+        "Name"
       ]
     },
     "updated_at": {

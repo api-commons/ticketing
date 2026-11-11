@@ -11,8 +11,8 @@ concepts:
       id:
       - id
       - Id
-      subject: Subject
       created_at: CreatedDate
+      subject: Subject
       assignee_id: OwnerId
       priority: Priority
       requester_id: ContactId

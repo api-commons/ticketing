@@ -11,8 +11,8 @@ concepts:
       - status
       - status_id
       id: id
-      subject: subject
       created_at: created_at
+      subject: subject
       assignee_id:
       - assignee
       - assignee_id

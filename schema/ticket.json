@@ -25,18 +25,34 @@
       "x-commons-providers": 23,
       "x-commons-spellings": [
         "id",
-        "ticket_id",
+        "Id",
         "uuid",
         "displayId",
-        "ticketID",
-        "Id"
+        "ticket_id",
+        "ticketID"
       ]
     },
-    "subject": {
+    "created_at": {
       "type": "string",
       "x-commons-tier": "core",
       "x-commons-share": 0.769,
       "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "created",
+        "dateCreated",
+        "createdDate",
+        "CreatedDate",
+        "createdTime"
+      ],
+      "format": "date-time"
+    },
+    "subject": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.731,
+      "x-commons-providers": 19,
       "x-commons-spellings": [
         "subject",
         "title",
@@ -46,22 +62,6 @@
         "Subject",
         "raw_subject"
       ]
-    },
-    "created_at": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.731,
-      "x-commons-providers": 19,
-      "x-commons-spellings": [
-        "created_at",
-        "createdAt",
-        "dateCreated",
-        "createdDate",
-        "created",
-        "CreatedDate",
-        "createdTime"
-      ],
-      "format": "date-time"
     },
     "assignee_id": {
       "type": "object",
@@ -134,12 +134,13 @@
     "custom_fields": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.423,
-      "x-commons-providers": 11,
+      "x-commons-share": 0.462,
+      "x-commons-providers": 12,
       "x-commons-spellings": [
         "custom_fields",
         "customFields",
         "properties",
+        "CustomFields",
         "attributes",
         "custom_properties",
         "fields"
@@ -148,8 +149,8 @@
     "description": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.423,
-      "x-commons-providers": 11,
+      "x-commons-share": 0.462,
+      "x-commons-providers": 12,
       "x-commons-spellings": [
         "description",
         "body",

@@ -15,8 +15,8 @@ a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| ticket | 34 | 26 | status 92%, id 88%, subject 77%, created_at 73%, assignee_id 65%, priority 62%, updated_at 58%, requester_id 54%, channel 50% | tickets 15, conversations 13, requests 6, issues 2 |
-| ticket_message | 18 | 16 | id 88%, body 81%, attachments 75%, ticket_id 56%, author_id 50%, created_at 50% | messages 8, notes 7, comments 4, reply 2 |
+| ticket | 34 | 26 | status 92%, id 88%, created_at 77%, subject 73%, assignee_id 65%, priority 62%, updated_at 58%, requester_id 54%, channel 50% | tickets 15, conversations 13, requests 6, issues 2 |
+| ticket_message | 18 | 16 | id 94%, body 88%, attachments 81%, author_id 62%, created_at 56%, ticket_id 56% | messages 8, notes 7, comments 4, reply 2 |
 | requester | 24 | 20 | id 85%, name 80%, email 75%, phone 70%, created_at 60% | contacts 13, customers 5, customer 2, contact 2 |
 | agent | 14 | 10 | id 90%, name 80%, role 50% | agents 13, agent 3, operators 1 |
 | group | 27 | 22 | id 91%, name 91% | teams 17, groups 14, queues 4, team 3 |

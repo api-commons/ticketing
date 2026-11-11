@@ -11,7 +11,8 @@ concepts:
     - cases
     properties:
       status: status
-      subject: title
+      created_at: created
+      description: body
     core_coverage: 0.222
     evidence:
     - openapi/_original/lithium-care-api-specifications-openapi.json#GET /case/{id}

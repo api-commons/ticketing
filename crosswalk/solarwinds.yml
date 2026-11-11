@@ -9,8 +9,8 @@ concepts:
     properties:
       status: state
       id: id
-      subject: name
       created_at: created_at
+      subject: name
       assignee_id: assignee
       priority: priority
       updated_at: updated_at

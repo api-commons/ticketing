@@ -12,8 +12,8 @@ concepts:
       id:
       - id
       - ticket_id
-      subject: subject
       created_at: created_at
+      subject: subject
       assignee_id: responder_id
       priority: priority
       updated_at: updated_at
@@ -46,9 +46,9 @@ concepts:
       - body
       - body_text
       attachments: attachments
-      ticket_id: ticket_id
       author_id: user_id
       created_at: created_at
+      ticket_id: ticket_id
       is_public: private
       updated_at: updated_at
     core_coverage: 1.0

@@ -11,8 +11,8 @@ concepts:
       id:
       - id
       - uuid
-      subject: name
       created_at: created_at
+      subject: name
       assignee_id: assignee_id
       priority: priority
       updated_at: updated_at
@@ -37,9 +37,9 @@ concepts:
       id: id
       body: content
       attachments: attachments
-      ticket_id: conversation_id
       author_id: sender_id
       created_at: created_at
+      ticket_id: conversation_id
       is_public: private
       external_id: source_id
       name:
