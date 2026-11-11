@@ -12,7 +12,8 @@
       "x-commons-providers": 14,
       "x-commons-spellings": [
         "id",
-        "uuid"
+        "uuid",
+        "organizationId"
       ]
     },
     "name": {
@@ -141,6 +142,8 @@
     "context": "ticketing",
     "concept": "organization",
     "providers": 14,
-    "generated": "2026-11-10"
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
   }
 }

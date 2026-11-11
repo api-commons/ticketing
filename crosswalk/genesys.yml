@@ -90,10 +90,10 @@ concepts:
     - teams
     - queue
     properties:
+      id: id
       name:
       - name
       - displayName
-      id: id
       agent_ids:
       - members
       - agentIds

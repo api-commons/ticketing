@@ -12,8 +12,8 @@ concepts:
       subject: subject
       created_at: created_at
       assignee_id: assignee
-      channel: channel
       updated_at: updated_at
+      channel: channel
     core_coverage: 0.778
     evidence:
     - openapi/_original/trengo-openapi.yml#GET /tickets
@@ -52,8 +52,8 @@ concepts:
     path_segment:
     - teams
     properties:
-      name: name
       id: id
+      name: name
     core_coverage: 1.0
     evidence:
     - openapi/_original/trengo-openapi.yml#POST /teams

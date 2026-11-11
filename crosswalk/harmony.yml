@@ -13,13 +13,12 @@ concepts:
       created_at: created_at
       assignee_id: assignee
       priority: priority
-      channel: source
       updated_at: updated_at
+      channel: source
       custom_fields: custom_fields
-      tags: tags
       description: description
+      tags: tags
       type: ticket_type
-      cc_ids: watchers
     core_coverage: 0.889
     evidence:
     - openapi/_original/harmony-service-desk-openapi.json#GET /api/v1/tickets/

@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Help Desk and Ticketing (API Commons)
-  version: '2026-11-10'
+  version: 0.1.0-draft.20261110
   description: 'The common Help Desk and Ticketing interface, distilled from the harvested OpenAPI of 77 providers
     in the APIs.io catalog. Not a product: no one serves this API. It is the shape the market already shares, measured,
     so that providers, agents and integrators can map to one vocabulary. See profile.yml.'
@@ -16,7 +16,7 @@ paths:
       tags:
       - Tickets
       x-commons-tier: core
-      x-commons-share: 0.879
+      x-commons-share: 0.882
       responses:
         '200':
           description: OK
@@ -35,7 +35,7 @@ paths:
       tags:
       - Tickets
       x-commons-tier: core
-      x-commons-share: 0.818
+      x-commons-share: 0.824
       responses:
         '200':
           description: OK
@@ -62,7 +62,7 @@ paths:
       tags:
       - Tickets
       x-commons-tier: core
-      x-commons-share: 0.848
+      x-commons-share: 0.853
       responses:
         '200':
           description: OK
@@ -75,7 +75,7 @@ paths:
       tags:
       - Tickets
       x-commons-tier: core
-      x-commons-share: 0.697
+      x-commons-share: 0.706
       responses:
         '200':
           description: OK
@@ -92,8 +92,8 @@ paths:
       summary: Delete a ticket
       tags:
       - Tickets
-      x-commons-tier: extended
-      x-commons-share: 0.485
+      x-commons-tier: core
+      x-commons-share: 0.5
       responses:
         '200':
           description: OK
@@ -124,7 +124,7 @@ paths:
             schema: *id002
     get:
       operationId: listTicketMessages
-      summary: List ticket messages
+      summary: List messages
       tags:
       - Ticket Messages
       x-commons-tier: core
@@ -313,7 +313,7 @@ paths:
           type: string
     post:
       operationId: createAgent
-      summary: Create a agent
+      summary: Create an agent
       tags:
       - Agents
       x-commons-tier: core
@@ -334,7 +334,7 @@ paths:
     - $ref: '#/components/parameters/agent_id'
     get:
       operationId: getAgent
-      summary: Get a agent
+      summary: Get an agent
       tags:
       - Agents
       x-commons-tier: core
@@ -347,7 +347,7 @@ paths:
               schema: *id004
     patch:
       operationId: updateAgent
-      summary: Update a agent
+      summary: Update an agent
       tags:
       - Agents
       x-commons-tier: core
@@ -365,7 +365,7 @@ paths:
             schema: *id004
     delete:
       operationId: deleteAgent
-      summary: Delete a agent
+      summary: Delete an agent
       tags:
       - Agents
       x-commons-tier: core
@@ -429,7 +429,7 @@ paths:
       tags:
       - Groups
       x-commons-tier: core
-      x-commons-share: 0.593
+      x-commons-share: 0.63
       responses:
         '200':
           description: OK
@@ -495,7 +495,7 @@ paths:
           type: string
     post:
       operationId: createOrganization
-      summary: Create a organization
+      summary: Create an organization
       tags:
       - Organizations
       x-commons-tier: core
@@ -516,7 +516,7 @@ paths:
     - $ref: '#/components/parameters/organization_id'
     get:
       operationId: getOrganization
-      summary: Get a organization
+      summary: Get an organization
       tags:
       - Organizations
       x-commons-tier: core
@@ -529,7 +529,7 @@ paths:
               schema: *id006
     patch:
       operationId: updateOrganization
-      summary: Update a organization
+      summary: Update an organization
       tags:
       - Organizations
       x-commons-tier: core
@@ -547,7 +547,7 @@ paths:
             schema: *id006
     delete:
       operationId: deleteOrganization
-      summary: Delete a organization
+      summary: Delete an organization
       tags:
       - Organizations
       x-commons-tier: core

@@ -8,7 +8,9 @@ concepts:
     - tickets
     properties:
       status: status
-      id: id
+      id:
+      - id
+      - ticket_id
       subject: subject
       created_at: created_at
       priority: priority

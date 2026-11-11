@@ -7,8 +7,8 @@ concepts:
     path_segment:
     - teams
     properties:
-      name: name
       id: id
+      name: name
     core_coverage: 1.0
     evidence:
     - openapi/_original/avoca-openapi-original.json#GET /api/teams

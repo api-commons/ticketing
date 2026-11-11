@@ -15,10 +15,9 @@ concepts:
       updated_at: updated_at
       requester_id: requester
       custom_fields: custom_fields
-      tags: tags
       description: description
+      tags: tags
       external_id: external_id
-      cc_ids: cc_emails
     core_coverage: 0.778
     evidence:
     - openapi/_original/atomicwork-public-api-openapi.yaml#GET /api/v1/forms/requests

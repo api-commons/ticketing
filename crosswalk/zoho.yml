@@ -93,8 +93,10 @@ concepts:
     - teams
     - departments
     properties:
+      id:
+      - id
+      - groupId
       name: name
-      id: id
       agent_ids: agents
       created_at: createdTime
       description: description

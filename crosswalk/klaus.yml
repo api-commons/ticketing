@@ -11,10 +11,10 @@ concepts:
       id: id
       subject: subject
       created_at: created
-      channel: channel
       updated_at: updated
-      tags: tags
+      channel: channel
       description: description
+      tags: tags
       type: type
       external_id: externalId
     core_coverage: 0.667

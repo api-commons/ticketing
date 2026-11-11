@@ -1,6 +1,8 @@
 context: ticketing
 name: Help Desk and Ticketing
 generated: '2026-11-10'
+version: 0.1.0-draft.20261110
+status: draft
 cohort:
   tags:
   - Customer Service
@@ -70,42 +72,43 @@ concepts:
       issues: 2
       cases: 2
       case: 2
-    providers_exposing: 33
-    providers_with_readable_schema: 25
+      incidents: 1
+    providers_exposing: 34
+    providers_with_readable_schema: 26
     operations:
     - operation: POST collection
-      providers: 29
-      share: 0.879
+      providers: 30
+      share: 0.882
       tier: core
     - operation: GET item
-      providers: 28
-      share: 0.848
+      providers: 29
+      share: 0.853
       tier: core
     - operation: GET collection
-      providers: 27
-      share: 0.818
+      providers: 28
+      share: 0.824
       tier: core
     - operation: UPDATE item
-      providers: 23
-      share: 0.697
+      providers: 24
+      share: 0.706
       tier: core
     - operation: DELETE item
-      providers: 16
-      share: 0.485
-      tier: extended
+      providers: 17
+      share: 0.5
+      tier: core
     - operation: DELETE collection
       providers: 2
-      share: 0.061
+      share: 0.059
       tier: long-tail
     - operation: UPDATE collection
       providers: 1
-      share: 0.03
+      share: 0.029
       tier: long-tail
     properties:
     - name: status
       tier: core
-      providers: 23
-      share: 0.92
+      providers: 24
+      share: 0.923
       type: string
       spellings:
       - status
@@ -115,18 +118,20 @@ concepts:
       - Status
     - name: id
       tier: core
-      providers: 22
-      share: 0.88
+      providers: 23
+      share: 0.885
       type: string
       spellings:
       - id
+      - ticket_id
       - uuid
       - displayId
+      - ticketID
       - Id
     - name: subject
       tier: core
-      providers: 19
-      share: 0.76
+      providers: 20
+      share: 0.769
       type: string
       spellings:
       - subject
@@ -138,8 +143,8 @@ concepts:
       - raw_subject
     - name: created_at
       tier: core
-      providers: 18
-      share: 0.72
+      providers: 19
+      share: 0.731
       type: string
       spellings:
       - created_at
@@ -151,8 +156,8 @@ concepts:
       - createdTime
     - name: assignee_id
       tier: core
-      providers: 16
-      share: 0.64
+      providers: 17
+      share: 0.654
       type: object
       spellings:
       - assignee
@@ -165,37 +170,37 @@ concepts:
       - AssigneeId
     - name: priority
       tier: core
-      providers: 15
-      share: 0.6
+      providers: 16
+      share: 0.615
       type: string
       spellings:
       - priority
       - PriorityId
       - Priority
-    - name: channel
-      tier: core
-      providers: 14
-      share: 0.56
-      type: string
-      spellings:
-      - channel
-      - source
-      - via
-      - Origin
     - name: updated_at
       tier: core
-      providers: 14
-      share: 0.56
+      providers: 15
+      share: 0.577
       type: string
       spellings:
       - updated_at
       - updatedAt
       - dateModified
       - updated
+    - name: channel
+      tier: core
+      providers: 14
+      share: 0.538
+      type: string
+      spellings:
+      - channel
+      - source
+      - via
+      - Origin
     - name: requester_id
       tier: core
-      providers: 13
-      share: 0.52
+      providers: 14
+      share: 0.538
       type: string
       spellings:
       - requester
@@ -209,7 +214,7 @@ concepts:
     - name: custom_fields
       tier: extended
       providers: 11
-      share: 0.44
+      share: 0.423
       type: object
       spellings:
       - custom_fields
@@ -218,41 +223,41 @@ concepts:
       - attributes
       - custom_properties
       - fields
-    - name: tags
-      tier: extended
-      providers: 11
-      share: 0.44
-      type: array
-      spellings:
-      - tags
-      - tag_ids
-      - labels
     - name: description
       tier: extended
-      providers: 10
-      share: 0.4
+      providers: 11
+      share: 0.423
       type: string
       spellings:
       - description
       - body
       - Details
       - Description
+    - name: tags
+      tier: extended
+      providers: 11
+      share: 0.423
+      type: array
+      spellings:
+      - tags
+      - tag_ids
+      - labels
     - name: type
       tier: extended
-      providers: 10
-      share: 0.4
+      providers: 11
+      share: 0.423
       type: string
       spellings:
       - type
+      - category
       - ticket_type
       - ticketType
       - TypeId
       - Type
-      - category
     - name: group_id
       tier: extended
       providers: 9
-      share: 0.36
+      share: 0.346
       type: integer
       spellings:
       - inbox_id
@@ -266,7 +271,7 @@ concepts:
     - name: organization_id
       tier: extended
       providers: 9
-      share: 0.36
+      share: 0.346
       type: string
       spellings:
       - account_id
@@ -279,7 +284,7 @@ concepts:
     - name: external_id
       tier: extended
       providers: 6
-      share: 0.24
+      share: 0.231
       type: string
       spellings:
       - external_id
@@ -287,19 +292,9 @@ concepts:
       - externalID
       - SourceId
       - externalId
-    - name: cc_ids
-      tier: extended
-      providers: 5
-      share: 0.2
-      type: array
-      spellings:
-      - cc_emails
-      - watchers
-      - Ccs
-      - collaborator_ids
-      - follower_ids
     long_tail_count: 436
     long_tail_sample:
+    - cc_ids
     - attachments
     - created_by
     - due_at
@@ -311,7 +306,6 @@ concepts:
     - email
     - is_escalated
     - language
-    - ticket_id
     - ticket_number
     - url
     - attachment_count
@@ -325,6 +319,7 @@ concepts:
     - link
     - messages
     - modified_by
+    - number
     - open
     - phone
     - product_id
@@ -339,7 +334,6 @@ concepts:
     - account
     - additional_attributes
     - address
-    - agent_group
   ticket_message:
     segments_seen:
       messages: 8
@@ -747,7 +741,7 @@ concepts:
     - blocked
   agent:
     segments_seen:
-      agents: 12
+      agents: 13
       agent: 3
       operators: 1
     providers_exposing: 14
@@ -784,11 +778,12 @@ concepts:
     properties:
     - name: id
       tier: core
-      providers: 7
-      share: 0.7
+      providers: 8
+      share: 0.8
       type: string
       spellings:
       - id
+      - agentId
     - name: name
       tier: core
       providers: 7
@@ -832,7 +827,7 @@ concepts:
       spellings:
       - status
       - available
-    long_tail_count: 98
+    long_tail_count: 97
     long_tail_sample:
     - account_id
     - first_name
@@ -843,7 +838,6 @@ concepts:
     - accept_direct_shift_trades
     - additional_emails
     - additional_phone_numbers
-    - agent_id
     - agent_ids
     - agent_setting
     - associated_agents
@@ -874,10 +868,11 @@ concepts:
     - destination_management_unit_id
     - destination_participant_id
     - dropped_changes
+    - email_id
   group:
     segments_seen:
       teams: 17
-      groups: 13
+      groups: 14
       queues: 4
       team: 3
       queue: 3
@@ -895,8 +890,8 @@ concepts:
       share: 0.667
       tier: core
     - operation: GET item
-      providers: 16
-      share: 0.593
+      providers: 17
+      share: 0.63
       tier: core
     - operation: UPDATE item
       providers: 11
@@ -915,6 +910,15 @@ concepts:
       share: 0.111
       tier: long-tail
     properties:
+    - name: id
+      tier: core
+      providers: 20
+      share: 0.909
+      type: string
+      spellings:
+      - id
+      - groupId
+      - group_id
     - name: name
       tier: core
       providers: 20
@@ -923,13 +927,6 @@ concepts:
       spellings:
       - name
       - displayName
-    - name: id
-      tier: core
-      providers: 19
-      share: 0.864
-      type: string
-      spellings:
-      - id
     - name: agent_ids
       tier: extended
       providers: 9
@@ -960,9 +957,8 @@ concepts:
       type: string
       spellings:
       - description
-    long_tail_count: 225
+    long_tail_count: 226
     long_tail_sample:
-    - group_id
     - member_count
     - updated_at
     - external_id
@@ -1002,6 +998,7 @@ concepts:
     - avg_resolution_time
     - banner_photo
     - bullseye
+    - business_hour_id
   organization:
     segments_seen:
       accounts: 5
@@ -1048,6 +1045,7 @@ concepts:
       spellings:
       - id
       - uuid
+      - organizationId
     - name: name
       tier: core
       providers: 11
@@ -1142,7 +1140,7 @@ concepts:
       type: string
       spellings:
       - type
-    long_tail_count: 206
+    long_tail_count: 205
     long_tail_sample:
     - city
     - company_name

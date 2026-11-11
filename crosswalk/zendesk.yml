@@ -16,8 +16,8 @@ concepts:
       created_at: created_at
       assignee_id: assignee_id
       priority: priority
-      channel: via
       updated_at: updated_at
+      channel: via
       requester_id:
       - requester_id
       - submitter_id
@@ -25,15 +25,12 @@ concepts:
       custom_fields:
       - custom_fields
       - fields
-      tags: tags
       description: description
+      tags: tags
       type: type
       group_id: group_id
       organization_id: organization_id
       external_id: external_id
-      cc_ids:
-      - collaborator_ids
-      - follower_ids
     core_coverage: 1.0
     evidence:
     - openapi/_original/channels-openapi-original.yml#POST /api/v2/channels/twitter/tickets
@@ -53,10 +50,13 @@ concepts:
     - openapi/_original/zendesk-support-openapi.yml#GET /tickets/{ticket_id}/comments
   agent:
     path_segment:
+    - agents
     - agent
     properties: {}
     core_coverage: 0.0
     evidence:
+    - openapi/_original/assignables-openapi-original.yml#GET /api/lotus/assignables/groups/{group_id}/agents.json
+    - openapi/_original/groups-openapi-original.yml#GET /api/lotus/assignables/groups/{group_id}/agents.json
     - openapi/_original/locales-openapi-original.yml#GET /api/v2/locales/agent
   group:
     path_segment:
@@ -65,11 +65,11 @@ concepts:
     properties: {}
     core_coverage: 0.0
     evidence:
+    - openapi/_original/assignables-openapi-original.yml#GET /api/lotus/assignables/groups.json
     - openapi/_original/groups-openapi-original.yml#DELETE /api/v2/groups/{group_id}
+    - openapi/_original/groups-openapi-original.yml#GET /api/lotus/assignables/groups.json
     - openapi/_original/groups-openapi-original.yml#GET /api/v2/groups
     - openapi/_original/groups-openapi-original.yml#GET /api/v2/groups/{group_id}
-    - openapi/_original/groups-openapi-original.yml#POST /api/v2/groups
-    - openapi/_original/groups-openapi-original.yml#PUT /api/v2/groups/{group_id}
   organization:
     path_segment:
     - organizations

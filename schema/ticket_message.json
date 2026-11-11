@@ -140,6 +140,8 @@
     "context": "ticketing",
     "concept": "ticket_message",
     "providers": 16,
-    "generated": "2026-11-10"
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
   }
 }

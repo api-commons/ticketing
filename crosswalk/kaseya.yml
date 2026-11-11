@@ -10,7 +10,9 @@ concepts:
       status:
       - status
       - StatusId
-      id: id
+      id:
+      - id
+      - ticketID
       subject:
       - title
       - Title
@@ -37,7 +39,6 @@ concepts:
       external_id:
       - externalID
       - SourceId
-      cc_ids: Ccs
     core_coverage: 0.778
     evidence:
     - openapi/_original/kaseya-autotask-psa-openapi-original.json#DELETE /V1.0/ServiceCalls/{parentId}/Tickets/{id}
@@ -96,8 +97,8 @@ concepts:
     - teams
     - departments
     properties:
-      name: name
       id: id
+      name: name
       description: description
     core_coverage: 1.0
     evidence:

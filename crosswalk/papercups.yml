@@ -11,8 +11,8 @@ concepts:
       id: id
       assignee_id: assignee_id
       priority: priority
-      channel: source
       updated_at: updated_at
+      channel: source
       requester_id: customer_id
       organization_id: account_id
     core_coverage: 0.778

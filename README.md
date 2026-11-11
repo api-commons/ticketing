@@ -15,14 +15,14 @@ a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| ticket | 33 | 25 | status 92%, id 88%, subject 76%, created_at 72%, assignee_id 64%, priority 60%, channel 56%, updated_at 56%, requester_id 52% | tickets 15, conversations 13, requests 6, issues 2 |
+| ticket | 34 | 26 | status 92%, id 88%, subject 77%, created_at 73%, assignee_id 65%, priority 62%, updated_at 58%, channel 54%, requester_id 54% | tickets 15, conversations 13, requests 6, issues 2 |
 | ticket_message | 18 | 16 | id 88%, body 81%, attachments 75%, ticket_id 56%, author_id 50%, created_at 50% | messages 8, notes 7, comments 4, reply 2 |
 | requester | 24 | 20 | id 85%, name 80%, email 75%, phone 70%, created_at 60% | contacts 13, customers 5, customer 2, contact 2 |
-| agent | 14 | 10 | id 70%, name 70% | agents 12, agent 3, operators 1 |
-| group | 27 | 22 | name 91%, id 86% | teams 17, groups 13, queues 4, team 3 |
+| agent | 14 | 10 | id 80%, name 70% | agents 13, agent 3, operators 1 |
+| group | 27 | 22 | id 91%, name 91% | teams 17, groups 14, queues 4, team 3 |
 | organization | 14 | 14 | id 100%, name 79%, created_at 71% | accounts 5, organizations 5, companies 4, organization 4 |
 
-Cohort: 77 providers with harvested OpenAPI, 48 crosswalks. Of the providers exposing a ticket: 88% create, 82% list, 85% fetch, 70% update, 48% delete. Generated 2026-11-10 by build.py.
+Cohort: 77 providers with harvested OpenAPI, 48 crosswalks. Of the providers exposing a ticket: 88% create, 82% list, 85% fetch, 71% update, 50% delete. Generated 2026-11-10 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

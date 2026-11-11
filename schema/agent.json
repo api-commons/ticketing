@@ -8,10 +8,11 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.7,
-      "x-commons-providers": 7,
+      "x-commons-share": 0.8,
+      "x-commons-providers": 8,
       "x-commons-spellings": [
-        "id"
+        "id",
+        "agentId"
       ]
     },
     "name": {
@@ -77,6 +78,8 @@
     "context": "ticketing",
     "concept": "agent",
     "providers": 10,
-    "generated": "2026-11-10"
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
   }
 }

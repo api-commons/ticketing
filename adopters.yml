@@ -275,6 +275,7 @@ adopters:
   crosswalk: crosswalk/solarwinds.yml
   concepts:
   - group
+  - ticket
 - provider: stellaconnect
   apis_io: https://apis.io/providers/stellaconnect/
   crosswalk: crosswalk/stellaconnect.yml

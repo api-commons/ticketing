@@ -2,14 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/ticketing/main/schema/ticket.json",
   "title": "Ticket",
-  "description": "The common ticket in Help Desk and Ticketing, distilled from 25 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common ticket in Help Desk and Ticketing, distilled from 26 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.92,
-      "x-commons-providers": 23,
+      "x-commons-share": 0.923,
+      "x-commons-providers": 24,
       "x-commons-spellings": [
         "status",
         "state",
@@ -21,20 +21,22 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.88,
-      "x-commons-providers": 22,
+      "x-commons-share": 0.885,
+      "x-commons-providers": 23,
       "x-commons-spellings": [
         "id",
+        "ticket_id",
         "uuid",
         "displayId",
+        "ticketID",
         "Id"
       ]
     },
     "subject": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.76,
-      "x-commons-providers": 19,
+      "x-commons-share": 0.769,
+      "x-commons-providers": 20,
       "x-commons-spellings": [
         "subject",
         "title",
@@ -48,8 +50,8 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.72,
-      "x-commons-providers": 18,
+      "x-commons-share": 0.731,
+      "x-commons-providers": 19,
       "x-commons-spellings": [
         "created_at",
         "createdAt",
@@ -64,8 +66,8 @@
     "assignee_id": {
       "type": "object",
       "x-commons-tier": "core",
-      "x-commons-share": 0.64,
-      "x-commons-providers": 16,
+      "x-commons-share": 0.654,
+      "x-commons-providers": 17,
       "x-commons-spellings": [
         "assignee",
         "assignee_id",
@@ -80,31 +82,19 @@
     "priority": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.6,
-      "x-commons-providers": 15,
+      "x-commons-share": 0.615,
+      "x-commons-providers": 16,
       "x-commons-spellings": [
         "priority",
         "PriorityId",
         "Priority"
       ]
     },
-    "channel": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.56,
-      "x-commons-providers": 14,
-      "x-commons-spellings": [
-        "channel",
-        "source",
-        "via",
-        "Origin"
-      ]
-    },
     "updated_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.56,
-      "x-commons-providers": 14,
+      "x-commons-share": 0.577,
+      "x-commons-providers": 15,
       "x-commons-spellings": [
         "updated_at",
         "updatedAt",
@@ -113,11 +103,23 @@
       ],
       "format": "date-time"
     },
+    "channel": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.538,
+      "x-commons-providers": 14,
+      "x-commons-spellings": [
+        "channel",
+        "source",
+        "via",
+        "Origin"
+      ]
+    },
     "requester_id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.52,
-      "x-commons-providers": 13,
+      "x-commons-share": 0.538,
+      "x-commons-providers": 14,
       "x-commons-spellings": [
         "requester",
         "contact_id",
@@ -132,7 +134,7 @@
     "custom_fields": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.44,
+      "x-commons-share": 0.423,
       "x-commons-providers": 11,
       "x-commons-spellings": [
         "custom_fields",
@@ -143,22 +145,11 @@
         "fields"
       ]
     },
-    "tags": {
-      "type": "array",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.44,
-      "x-commons-providers": 11,
-      "x-commons-spellings": [
-        "tags",
-        "tag_ids",
-        "labels"
-      ]
-    },
     "description": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.4,
-      "x-commons-providers": 10,
+      "x-commons-share": 0.423,
+      "x-commons-providers": 11,
       "x-commons-spellings": [
         "description",
         "body",
@@ -166,24 +157,35 @@
         "Description"
       ]
     },
+    "tags": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.423,
+      "x-commons-providers": 11,
+      "x-commons-spellings": [
+        "tags",
+        "tag_ids",
+        "labels"
+      ]
+    },
     "type": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.4,
-      "x-commons-providers": 10,
+      "x-commons-share": 0.423,
+      "x-commons-providers": 11,
       "x-commons-spellings": [
         "type",
+        "category",
         "ticket_type",
         "ticketType",
         "TypeId",
-        "Type",
-        "category"
+        "Type"
       ]
     },
     "group_id": {
       "type": "integer",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.36,
+      "x-commons-share": 0.346,
       "x-commons-providers": 9,
       "x-commons-spellings": [
         "inbox_id",
@@ -199,7 +201,7 @@
     "organization_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.36,
+      "x-commons-share": 0.346,
       "x-commons-providers": 9,
       "x-commons-spellings": [
         "account_id",
@@ -214,7 +216,7 @@
     "external_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.24,
+      "x-commons-share": 0.231,
       "x-commons-providers": 6,
       "x-commons-spellings": [
         "external_id",
@@ -222,19 +224,6 @@
         "externalID",
         "SourceId",
         "externalId"
-      ]
-    },
-    "cc_ids": {
-      "type": "array",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.2,
-      "x-commons-providers": 5,
-      "x-commons-spellings": [
-        "cc_emails",
-        "watchers",
-        "Ccs",
-        "collaborator_ids",
-        "follower_ids"
       ]
     }
   },
@@ -244,7 +233,9 @@
   "x-commons": {
     "context": "ticketing",
     "concept": "ticket",
-    "providers": 25,
-    "generated": "2026-11-10"
+    "providers": 26,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
   }
 }

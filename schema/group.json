@@ -5,6 +5,17 @@
   "description": "The common group in Help Desk and Ticketing, distilled from 22 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.909,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "id",
+        "groupId",
+        "group_id"
+      ]
+    },
     "name": {
       "type": "string",
       "x-commons-tier": "core",
@@ -13,15 +24,6 @@
       "x-commons-spellings": [
         "name",
         "displayName"
-      ]
-    },
-    "id": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.864,
-      "x-commons-providers": 19,
-      "x-commons-spellings": [
-        "id"
       ]
     },
     "agent_ids": {
@@ -69,6 +71,8 @@
     "context": "ticketing",
     "concept": "group",
     "providers": 22,
-    "generated": "2026-11-10"
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
   }
 }
