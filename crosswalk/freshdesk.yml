@@ -17,10 +17,10 @@ concepts:
       assignee_id: responder_id
       priority: priority
       updated_at: updated_at
-      channel: source
       requester_id:
       - requester_id
       - user_id
+      channel: source
       custom_fields: custom_fields
       description:
       - description
@@ -85,9 +85,9 @@ concepts:
       role:
       - role_ids
       - type
-      created_at: created_at
       is_active: available
-    core_coverage: 0.5
+      created_at: created_at
+    core_coverage: 0.667
     evidence:
     - openapi/_original/freshdesk-rest-api-openapi.yml#DELETE /agents/{agent_id}
     - openapi/_original/freshdesk-rest-api-openapi.yml#GET /agents

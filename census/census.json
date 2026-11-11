@@ -271,12 +271,7 @@
      "sla_policy_id": "number",
      "applied_sla": "object",
      "sla_events": "array",
-     "sender": "object",
-     "channel": "string",
-     "assignee": "object",
-     "hmac_verified": "boolean",
      "meta": "object",
-     "payload": "array",
      "source_id": "string",
      "contact_id": "integer",
      "assignee_id": "integer",
@@ -522,8 +517,6 @@
      "GET item"
     ],
     "properties": {
-     "meta": "object",
-     "conversations": "array",
      "sourceId": "string",
      "summary": "string",
      "timestamp": "string",
@@ -844,9 +837,7 @@
      "PUT item"
     ],
     "properties": {
-     "eventId": "string",
-     "message": "string",
-     "retryable": "boolean",
+     "errors": "array",
      "endTransferEvents": "array",
      "phoneTransferEvents": "array",
      "progressTransferEvents": "array",
@@ -963,6 +954,7 @@
      "sentimentTrendClass": "string",
      "empathyScores": "array",
      "participantMetrics": "object",
+     "message": "string",
      "appointment": "object"
     },
     "evidence": [
@@ -1947,8 +1939,6 @@
      "POST collection"
     ],
     "properties": {
-     "tickets": "array",
-     "meta": "object",
      "id": "integer",
      "link": "string",
      "subject": "string",
@@ -2577,8 +2567,6 @@
      "title": "string",
      "value": "string",
      "csat_survey_response": "object",
-     "meta": "object",
-     "payload": "array",
      "account_id": "number",
      "inbox_id": "number",
      "updated_at": "integer",
@@ -3436,8 +3424,6 @@
      "account_id": "integer",
      "company_id": "integer",
      "label_list": "array",
-     "meta": "object",
-     "payload": "array",
      "availability_status": "string",
      "thumbnail": "string",
      "contact_inboxes": "array",
@@ -4325,20 +4311,18 @@
      "POST collection"
     ],
     "properties": {
-     "contacts": "array",
-     "meta": "object",
      "id": "string",
-     "email": "string",
+     "distinct_id": "string",
      "first_name": "string",
      "last_name": "string",
+     "email": "string",
      "phone": "string",
-     "email_consent": "string",
-     "distinct_id": "string",
-     "properties": "array",
      "language": "string",
      "country": "string",
      "city": "string",
-     "created_at": "string"
+     "created_at": "string",
+     "email_consent": "string",
+     "properties": "array"
     },
     "evidence": [
      "openapi/_original/tidio-openapi-openapi.yml#DELETE /contacts/{contactId}",
@@ -4864,8 +4848,13 @@
      "GET collection"
     ],
     "properties": {
-     "operators": "array",
-     "meta": "object"
+     "id": "string",
+     "active": "boolean",
+     "email": "string",
+     "name": "string",
+     "role": "string",
+     "picture": "string",
+     "last_seen": "string"
     },
     "evidence": [
      "openapi/_original/tidio-openapi-openapi.yml#GET /operators"

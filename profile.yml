@@ -63,6 +63,7 @@ excluded:
 duplicates:
   khoros-ai:
   - lithium
+shared_specs: {}
 concepts:
   ticket:
     segments_seen:
@@ -187,16 +188,6 @@ concepts:
       - updatedAt
       - dateModified
       - updated
-    - name: channel
-      tier: core
-      providers: 14
-      share: 0.538
-      type: string
-      spellings:
-      - channel
-      - source
-      - via
-      - Origin
     - name: requester_id
       tier: core
       providers: 14
@@ -211,6 +202,16 @@ concepts:
       - userId
       - user_id
       - customerId
+    - name: channel
+      tier: core
+      providers: 13
+      share: 0.5
+      type: string
+      spellings:
+      - channel
+      - source
+      - via
+      - Origin
     - name: custom_fields
       tier: extended
       providers: 11
@@ -292,7 +293,7 @@ concepts:
       - externalID
       - SourceId
       - externalId
-    long_tail_count: 436
+    long_tail_count: 431
     long_tail_sample:
     - cc_ids
     - attachments
@@ -472,7 +473,7 @@ concepts:
       spellings:
       - updated_at
       - updatedAt
-    long_tail_count: 167
+    long_tail_count: 166
     long_tail_sample:
     - sender
     - subject
@@ -697,7 +698,7 @@ concepts:
       - time_zone
       - timezone
       - timeZone
-    long_tail_count: 245
+    long_tail_count: 244
     long_tail_sample:
     - active
     - country
@@ -778,24 +779,24 @@ concepts:
     properties:
     - name: id
       tier: core
-      providers: 8
-      share: 0.8
+      providers: 9
+      share: 0.9
       type: string
       spellings:
       - id
       - agentId
     - name: name
       tier: core
-      providers: 7
-      share: 0.7
+      providers: 8
+      share: 0.8
       type: string
       spellings:
       - name
       - displayName
     - name: role
-      tier: extended
-      providers: 4
-      share: 0.4
+      tier: core
+      providers: 5
+      share: 0.5
       type: string
       spellings:
       - role
@@ -803,6 +804,23 @@ concepts:
       - role_ids
       - type
       - roleId
+    - name: email
+      tier: extended
+      providers: 4
+      share: 0.4
+      type: string
+      spellings:
+      - email
+      - emailAddress
+    - name: is_active
+      tier: extended
+      providers: 4
+      share: 0.4
+      type: boolean
+      spellings:
+      - status
+      - available
+      - active
     - name: created_at
       tier: extended
       providers: 3
@@ -811,23 +829,7 @@ concepts:
       spellings:
       - createdAt
       - created_at
-    - name: email
-      tier: extended
-      providers: 3
-      share: 0.3
-      type: string
-      spellings:
-      - email
-      - emailAddress
-    - name: is_active
-      tier: extended
-      providers: 3
-      share: 0.3
-      type: string
-      spellings:
-      - status
-      - available
-    long_tail_count: 97
+    long_tail_count: 99
     long_tail_sample:
     - account_id
     - first_name

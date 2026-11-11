@@ -103,18 +103,6 @@
       ],
       "format": "date-time"
     },
-    "channel": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.538,
-      "x-commons-providers": 14,
-      "x-commons-spellings": [
-        "channel",
-        "source",
-        "via",
-        "Origin"
-      ]
-    },
     "requester_id": {
       "type": "string",
       "x-commons-tier": "core",
@@ -129,6 +117,18 @@
         "userId",
         "user_id",
         "customerId"
+      ]
+    },
+    "channel": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 13,
+      "x-commons-spellings": [
+        "channel",
+        "source",
+        "via",
+        "Origin"
       ]
     },
     "custom_fields": {

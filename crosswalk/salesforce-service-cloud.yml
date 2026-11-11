@@ -15,8 +15,8 @@ concepts:
       created_at: CreatedDate
       assignee_id: OwnerId
       priority: Priority
-      channel: Origin
       requester_id: ContactId
+      channel: Origin
       description: Description
       type: Type
       organization_id: AccountId

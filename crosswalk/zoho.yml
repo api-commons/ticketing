@@ -15,10 +15,10 @@ concepts:
       - assignee
       - assigneeId
       priority: priority
+      requester_id: contactId
       channel:
       - channel
       - source
-      requester_id: contactId
       custom_fields: customFields
       description: description
       type: category

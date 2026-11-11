@@ -17,11 +17,11 @@ concepts:
       assignee_id: assignee_id
       priority: priority
       updated_at: updated_at
-      channel: via
       requester_id:
       - requester_id
       - submitter_id
       - requester
+      channel: via
       custom_fields:
       - custom_fields
       - fields

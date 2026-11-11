@@ -20,10 +20,10 @@ concepts:
       priority:
       - priority
       - PriorityId
-      channel: source
       requester_id:
       - contactID
       - ContactId
+      channel: source
       description:
       - description
       - Details
